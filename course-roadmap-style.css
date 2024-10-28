@@ -1,99 +1,141 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f8f8f8;
-  }
-  
-  /* Hero Section for Course Roadmap */
-  .hero-course {
-    background-color: #4d1979;
-    color: #fff;
-    text-align: center;
-    padding: 4rem 1rem;
-  }
-  
-  .hero-course h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero-course p {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
-  
-  /* Course Recommendations Section */
-  .recommendations {
-    padding: 2rem 1rem;
-    background-color: #f4f4f9;
-    text-align: center;
-  }
-  
-  .recommendations h2 {
-    color: #4d1979;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  .recommendations p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .recommendations ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem;
-  }
-  
-  .recommendations ul li {
-    padding: 0.5rem 0;
-    font-size: 1rem;
-  }
-  
-  /* Roadmap Section */
-  .roadmap {
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  .roadmap h2 {
-    color: #4d1979;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-  
-  .roadmap p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 2rem;
-  }
-  
-  .roadmap-year {
-    margin-bottom: 1.5rem;
-  }
-  
-  .roadmap-year h3 {
-    color: #333;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .roadmap-year ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .roadmap-year ul li {
-    font-size: 1rem;
-    padding: 0.3rem 0;
-  }
-  
-  /* Footer */
-  .footer {
-    padding: 1.5rem;
-    background-color: #4d1979;
-    color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-  }
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+}
+
+/* Hero Section for Course Roadmap */
+.hero-course {
+  background-color: #4d1979;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-course h1 {
+  font-size: 2.5rem;
+}
+
+.hero-course p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Course Requirements and Collateral Credits Sections */
+.requirements, .collateral-credits {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.requirements h2, .collateral-credits h2 {
+  color: #4d1979;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.requirements p, .collateral-credits p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.requirements ul, .collateral-credits ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.requirements ul li, .collateral-credits ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.requirements ul li strong, .collateral-credits ul li strong {
+  color: #333;
+}
+
+.collateral-credits p em {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Degree Map Section */
+.degree-map {
+  padding: 2rem 1rem;
+  background-color: #f4f4f9;
+  text-align: center;
+}
+
+.degree-map h2 {
+  color: #4d1979;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.degree-map p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Styling each semester */
+.year {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  max-width: 500px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.year h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.year ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.year ul.course-list {
+  display: none; /* Initially hidden, shown on click */
+}
+
+.year ul li {
+  font-size: 1rem;
+  padding: 0.3rem 0;
+}
+
+/* Hover effect for each semester */
+.year:hover {
+  background-color: #e8e8ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem;
+  background-color: #4d1979;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
