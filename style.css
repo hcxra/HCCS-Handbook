@@ -130,6 +130,135 @@
     text-align: center;
     font-size: 0.9rem;
   }
+
+  /* Main Navigation Bar */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #4d1979; /* Hunter College purple */
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Course Recommendations Section */
+.recommendations {
+  padding: 2rem 1rem;
+  background-color: #f4f4f9;
+  text-align: center;
+}
+
+.recommendations h2 {
+  color: #4d1979;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.recommendations p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.recommendations ul li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Roadmap Section */
+.roadmap {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.roadmap h2 {
+  color: #4d1979;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.roadmap p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.roadmap-year {
+  margin-bottom: 1.5rem;
+}
+
+.roadmap-year h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.roadmap-year ul {
+  list-style: none;
+  padding: 0;
+}
+
+.roadmap-year ul li {
+  font-size: 1rem;
+  padding: 0.3rem 0;
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem;
+  background-color: #4d1979;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Main Navigation Bar */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #4d1979; /* Hunter College purple */
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav ul li {
+  margin: 0;
+}
+
+.main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.main-nav ul li a:hover {
+  color: #ffd700; /* Gold color on hover */
+}
+
+
   
   
   
