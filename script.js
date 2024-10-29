@@ -18,4 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+  document.addEventListener("DOMContentLoaded", function() {
+    // Select all elements with the class "toggle-title"
+    const toggleTitles = document.querySelectorAll('.toggle-title');
+  
+    // Loop over each title and add an event listener
+    toggleTitles.forEach(title => {
+      title.addEventListener('click', function() {
+        // Toggle the active class on the clicked title
+        this.classList.toggle('active');
+      });
+    });
+  });
   
