@@ -1,6 +1,5 @@
 /* Basic Reset */
 * {
-<<<<<<< HEAD
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,149 +13,11 @@ body {
 }
 
 /* Fixed Navigation Bar */
-=======
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f8f8f8;
-    padding-top: 60px; /* Adjust for fixed nav bar height */
-  }
-  
-  /* Fixed Navigation Bar */
-  .main-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #4d1979;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-item {
-    position: relative; /* Anchor for dropdown positioning */
-  }
-  
-  /* Main Category Links */
-  .nav-item > a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-  
-  .nav-item > a:hover {
-    color: #ffd700;
-  }
-  
-  /* Dropdown Menus */
-  .dropdown {
-    display: none; /* Hide dropdown by default */
-    position: absolute;
-    top: 100%; /* Position it directly below the main item */
-    left: 0;
-    background-color: #4d1979;
-    list-style: none;
-    min-width: 180px;
-    padding: 0;
-    border-radius: 4px; /* Optional: Rounded corners for dropdown */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for visual depth */
-    z-index: 1000; /* Ensure dropdown appears above other elements */
-  }
-  
-  .dropdown li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: #fff;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  
-  .dropdown li a:hover {
-    background-color: #ffd700;
-    color: #4d1979;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background-color: #4d1979;
-    color: #fff;
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .hero-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .cta-button {
-    padding: 0.75rem 2rem;
-    background-color: #ffd700;
-    color: #4d1979;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .cta-button:hover {
-    background-color: #ffc133;
-  }
-  
-  /* Explore Section */
-  .explore-section {
-    padding: 3rem 1rem;
-    text-align: center;
-  }
-  
-  .explore-section h2 {
-    color: #4d1979;
-    margin-bottom: 1rem;
-  }
-  
-  .explore-section p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /* Footer */
-  .footer {
-    padding: 1.5rem;
-    background-color: #4d1979;
-    color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-  /* Main Navigation Bar */
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4
 .main-nav {
   position: fixed;
   top: 0;
   width: 100%;
-<<<<<<< HEAD
   background-color: #4d1979;
-=======
-  background-color: #4d1979; /* Hunter College purple */
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4
   padding: 1rem 0;
   display: flex;
   justify-content: center;
@@ -169,7 +30,6 @@ body {
   gap: 2rem;
 }
 
-<<<<<<< HEAD
 .nav-item {
   position: relative; /* Anchor for dropdown positioning */
 }
@@ -258,78 +118,10 @@ body {
 }
 
 .explore-section p {
-=======
-/* Course Recommendations Section */
-.recommendations {
-  padding: 2rem 1rem;
-  background-color: #f4f4f9;
-  text-align: center;
-}
-
-.recommendations h2 {
-  color: #4d1979;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.recommendations p {
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4
   font-size: 1rem;
   color: #555;
 }
 
-<<<<<<< HEAD
-=======
-.recommendations ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-.recommendations ul li {
-  padding: 0.5rem 0;
-  font-size: 1rem;
-}
-
-/* Roadmap Section */
-.roadmap {
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.roadmap h2 {
-  color: #4d1979;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.roadmap p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.roadmap-year {
-  margin-bottom: 1.5rem;
-}
-
-.roadmap-year h3 {
-  color: #333;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.roadmap-year ul {
-  list-style: none;
-  padding: 0;
-}
-
-.roadmap-year ul li {
-  font-size: 1rem;
-  padding: 0.3rem 0;
-}
-
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4
 /* Footer */
 .footer {
   padding: 1.5rem;
@@ -341,7 +133,6 @@ body {
 
 /* Main Navigation Bar */
 .main-nav {
-<<<<<<< HEAD
 position: fixed;
 top: 0;
 width: 100%;
@@ -467,42 +258,8 @@ padding: 0.5rem 1rem;
 color: #ffd700; /* Gold color on hover */
 }
 
-=======
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #4d1979; /* Hunter College purple */
-  padding: 1rem 0;
-  display: flex;
-  justify-content: center;
-  z-index: 10;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.main-nav ul li {
-  margin: 0;
-}
-
-.main-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
-
-.main-nav ul li a:hover {
-  color: #ffd700; /* Gold color on hover */
-}
 
 
-  
-  
-  
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4
-  
-  
+
+
+

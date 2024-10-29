@@ -1,167 +1,190 @@
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f8f8f8;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navigation Menu with Dropdown */
-  .main-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #4d1979;
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-    z-index: 10;
-  }
-  
-  .main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-item {
-    position: relative;
-  }
-  
-  .nav-item > a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-  }
-  
-  .nav-item > a:hover {
-    color: #ffd700;
-  }
-  
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #4d1979;
-    list-style: none;
-    padding: 0;
-    min-width: 180px;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dropdown li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .dropdown li a:hover {
-    background-color: #ffd700;
-    color: #4d1979;
-  }
-  
-  .nav-item:hover .dropdown {
-    display: block;
-  }
-  
-  /* Explore Section */
-  .explore-section {
-    padding: 3rem 2rem;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 100px; /* Adjust for fixed nav bar */
-    text-align: center;
-  }
-  
-  .explore-section h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    color: #4d1979;
-  }
-  
-  .explore-section .intro-text {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  /* Resource Box Styling */
-  .resource-box {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .resource-box h2 {
-    font-size: 1.8rem;
-    color: #4d1979;
-    margin-bottom: 1rem;
-  }
-  
-  .resource-box ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .resource-box ul li {
-    padding: 10px 0;
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  .resource-box ul li a {
-    color: #ffd700;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .resource-box ul li a:hover {
-    color: #4d1979;
-    text-decoration: underline;
-  }
-  
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Menu with Dropdown */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #4d1979;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  z-index: 10;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.nav-item > a:hover {
+  color: #ffd700;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #4d1979;
+  list-style: none;
+  padding: 0;
+  min-width: 180px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  background-color: #ffd700;
+  color: #4d1979;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Ensure dropdowns only appear when their parent is hovered */
+.main-nav .nav-item {
+  position: relative;
+}
+
+.main-nav .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #4d1979;
+  list-style: none;
+  min-width: 180px;
+  padding: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Show dropdown only when hovering over the parent nav-item */
+.main-nav .nav-item:hover .dropdown {
+  display: block;
+}
+
+
+/* Explore Section */
+.explore-section {
+  padding: 3rem 2rem;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 100px; /* Adjust for fixed nav bar */
+  text-align: center;
+}
+
+.explore-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: #4d1979;
+}
+
+.explore-section .intro-text {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Resource Box Styling */
+.resource-box {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-box h2 {
+  font-size: 1.8rem;
+  color: #4d1979;
+  margin-bottom: 1rem;
+}
+
+.resource-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-box ul li {
+  padding: 10px 0;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.resource-box ul li a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.resource-box ul li a:hover {
+  color: #4d1979;
+  text-decoration: underline;
+}
+
 
 /* Toggle Content - Initially Hidden */
 .toggle-content {
-    display: none;
-    padding-top: 10px;
-    padding-left: 20px;
-  }
-  
-  /* Add cursor and hover effect to toggle titles */
-  .toggle-title {
-    cursor: pointer;
-    color: #4d1979;
-  }
-  
-  .toggle-title:hover {
-    color: #ffd700;
-  }
-  
-  /* Active class to display the content */
-  .active + .toggle-content {
-    display: block;
-  }
+  display: none;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+/* Add cursor and hover effect to toggle titles */
+.toggle-title {
+  cursor: pointer;
+  color: #4d1979;
+}
+
+.toggle-title:hover {
+  color: #ffd700;
+}
+
+/* Active class to display the content */
+.active + .toggle-content {
+  display: block;
+}
 
 
-  /* Footer Styling */
-  .footer {
-    background-color: #4d1979;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-  }
-  
+/* Footer Styling */
+.footer {
+  background-color: #4d1979;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}

@@ -1,6 +1,227 @@
 /* General Styling */
 body {
-<<<<<<< HEAD
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+  }
+  
+  
+  /* Navigation Menu with Dropdown */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4d1979;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    z-index: 10;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  .nav-item > a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-item > a:hover {
+    color: #ffd700;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4d1979;
+    list-style: none;
+    padding: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown li a:hover {
+    background-color: #ffd700;
+    color: #4d1979;
+  }
+  /* Ensure dropdowns only appear when their parent is hovered */
+.main-nav .nav-item {
+    position: relative;
+}
+
+.main-nav .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4d1979;
+    list-style: none;
+    min-width: 180px;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Show dropdown only when hovering over the parent nav-item */
+.main-nav .nav-item:hover .dropdown {
+    display: block;
+}
+
+  /* Hero Section for Course Roadmap */
+  .hero-course {
+    background-color: #4d1979;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  
+  .hero-course h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-course p {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Course Requirements and Collateral Credits Sections */
+  .requirements, .collateral-credits {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .requirements h2, .collateral-credits h2 {
+    color: #4d1979;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .requirements p, .collateral-credits p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .requirements ul, .collateral-credits ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .requirements ul li, .collateral-credits ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .requirements ul li strong, .collateral-credits ul li strong {
+    color: #333;
+  }
+  
+  .collateral-credits p em {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Degree Map Section */
+  .degree-map {
+    padding: 2rem 1rem;
+    background-color: #f4f4f9;
+    text-align: center;
+  }
+  
+  .degree-map h2 {
+    color: #4d1979;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .degree-map p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  /* Styling each semester */
+  .year {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 80%;
+    max-width: 500px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .year h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  
+  .year ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .year ul.course-list {
+    display: none; /* Initially hidden, shown on click */
+  }
+  
+  .year ul li {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+  }
+  
+  /* Hover effect for each semester */
+  .year:hover {
+    background-color: #e8e8ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 1.5rem;
+    background-color: #4d1979;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  /* General Styling */
+  body {
     font-family: Arial, sans-serif;
     color: #333;
     background-color: #f8f8f8;
@@ -204,408 +425,3 @@ body {
     text-align: center;
     font-size: 0.9rem;
   }
-=======
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #f8f8f8;
-  line-height: 1.6;
-}
-
-
-/* Navigation Menu with Dropdown */
-.main-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #4d1979;
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  z-index: 10;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-item {
-  position: relative;
-}
-
-.nav-item > a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-}
-
-.nav-item > a:hover {
-  color: #ffd700;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #4d1979;
-  list-style: none;
-  padding: 0;
-  min-width: 180px;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown li a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.dropdown li a:hover {
-  background-color: #ffd700;
-  color: #4d1979;
-}
-
-/* Hero Section for Course Roadmap */
-.hero-course {
-  background-color: #4d1979;
-  color: #fff;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.hero-course h1 {
-  font-size: 2.5rem;
-}
-
-.hero-course p {
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-/* Course Requirements and Collateral Credits Sections */
-.requirements, .collateral-credits {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.requirements h2, .collateral-credits h2 {
-  color: #4d1979;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.requirements p, .collateral-credits p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.requirements ul, .collateral-credits ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-.requirements ul li, .collateral-credits ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.requirements ul li strong, .collateral-credits ul li strong {
-  color: #333;
-}
-
-.collateral-credits p em {
-  color: #333;
-  font-weight: bold;
-}
-
-/* Degree Map Section */
-.degree-map {
-  padding: 2rem 1rem;
-  background-color: #f4f4f9;
-  text-align: center;
-}
-
-.degree-map h2 {
-  color: #4d1979;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.degree-map p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* Styling each semester */
-.year {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem auto;
-  padding: 1rem;
-  width: 80%;
-  max-width: 500px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.year h3 {
-  color: #333;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-transform: uppercase;
-}
-
-.year ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
-}
-
-.year ul.course-list {
-  display: none; /* Initially hidden, shown on click */
-}
-
-.year ul li {
-  font-size: 1rem;
-  padding: 0.3rem 0;
-}
-
-/* Hover effect for each semester */
-.year:hover {
-  background-color: #e8e8ff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer */
-.footer {
-  padding: 1.5rem;
-  background-color: #4d1979;
-  color: #fff;
-  text-align: center;
-  font-size: 0.9rem;
-}
-/* General Styling */
-body {
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #f8f8f8;
-  line-height: 1.6;
-}
-
-
-/* Navigation Menu with Dropdown */
-.main-nav {
-  position: fixed;
-  top: 0;
-  width: 100vw;  /* Full viewport width */
-  background-color: #4d1979;
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  z-index: 10;
-  left: 0;  /* Align with the left edge */
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.main-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-}
-
-.main-nav ul li a:hover {
-  color: #ffd700;  /* Gold color on hover */
-}
-
-.nav-item {
-  position: relative; /* Anchor dropdown to each item */
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%; /* Position directly below the nav item */
-  left: 0; /* Align dropdown to the left of each nav item */
-  background-color: #4d1979;
-  list-style: none;
-  padding: 0;
-  min-width: 180px;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10; /* Ensure dropdown appears above other elements */
-}
-
-.dropdown li a {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.dropdown li a:hover {
-  background-color: #ffd700;
-  color: #4d1979;
-}
-
-/* Hero Section for Course Roadmap */
-.hero-course {
-  background-color: #4d1979;
-  color: #fff;
-  text-align: center;
-  padding: 4rem 1rem;
-  width: 100vw;  /* Full viewport width */
-  margin-left: calc(50% - 50vw);  /* Center align the full-width section */
-}
-
-.hero-course h1 {
-  font-size: 2.5rem;
-}
-
-.hero-course p {
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-/* Course Requirements and Collateral Credits Sections */
-.requirements, .collateral-credits {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.requirements h2, .collateral-credits h2 {
-  color: #4d1979;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.requirements p, .collateral-credits p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.requirements ul, .collateral-credits ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-.requirements ul li, .collateral-credits ul li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.requirements ul li strong, .collateral-credits ul li strong {
-  color: #333;
-}
-
-.collateral-credits p em {
-  color: #333;
-  font-weight: bold;
-}
-
-/* Degree Map Section */
-.degree-map {
-  padding: 2rem 1rem;
-  background-color: #f4f4f9;
-  text-align: center;
-}
-
-.degree-map h2 {
-  color: #4d1979;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.degree-map p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* Styling each semester */
-.year {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem auto;
-  padding: 1rem;
-  width: 80%;
-  max-width: 500px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.year h3 {
-  color: #333;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-transform: uppercase;
-}
-
-.year ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
-}
-
-.year ul.course-list {
-  display: none; /* Initially hidden, shown on click */
-}
-
-.year ul li {
-  font-size: 1rem;
-  padding: 0.3rem 0;
-}
-
-/* Hover effect for each semester */
-.year:hover {
-  background-color: #e8e8ff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer */
-.footer {
-  padding: 1.5rem;
-  background-color: #4d1979;
-  color: #fff;
-  text-align: center;
-  font-size: 0.9rem;
-}
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4

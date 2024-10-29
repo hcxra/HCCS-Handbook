@@ -1,22 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Select all year elements
-  document.querySelectorAll('.year').forEach(year => {
-    year.addEventListener('click', () => {
-      // Find the course list within this year
-      const courseList = year.querySelector('.course-list');
-      
-      // Toggle display
-      if (courseList.style.display === 'block') {
-        courseList.style.display = 'none';
-      } else {
-        courseList.style.display = 'block';
-      }
-    });
-  });
-<<<<<<< HEAD
-});
-
-document.addEventListener('DOMContentLoaded', () => {
   // Select all dropdown toggles
   document.querySelectorAll('.nav-item').forEach(item => {
     const dropdown = item.querySelector('.dropdown');
@@ -36,19 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-=======
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    // Select all elements with the class "toggle-title"
-    const toggleTitles = document.querySelectorAll('.toggle-title');
-  
-    // Loop over each title and add an event listener
-    toggleTitles.forEach(title => {
-      title.addEventListener('click', function() {
-        // Toggle the active class on the clicked title
-        this.classList.toggle('active');
-      });
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all elements with the class "toggle-title"
+  const toggleTitles = document.querySelectorAll('.toggle-title');
+
+  // Loop over each title and add an event listener
+  toggleTitles.forEach(title => {
+    title.addEventListener('click', function() {
+      // Toggle the active class on the clicked title
+      this.classList.toggle('active');
     });
   });
->>>>>>> f3c69bd4a7e99e9849868e3bf8be0ffb710502f4
-  
+});

@@ -24,19 +24,19 @@ html, body {
 .main-nav {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     background-color: #4d1979;
     display: flex;
     justify-content: center;
-    padding: 0.5rem 0;
+    align-items: center;
+    padding: 1.5rem 0; /* Adjust padding for larger purple bar height */
     z-index: 10;
+    height: 80px; 
 }
-
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem; 
 }
 
 .nav-item {
@@ -50,8 +50,8 @@ html, body {
     padding: 0.5rem 1rem;
 }
 
-.nav-item:hover .dropdown {
-    display: block;
+.nav-item > a:hover {
+    color: #ffd700;
 }
 
 /* Dropdown Menu */
@@ -62,8 +62,8 @@ html, body {
     left: 0;
     background-color: #4d1979;
     list-style: none;
-    min-width: 180px;
     padding: 0;
+    min-width: 180px;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -79,6 +79,12 @@ html, body {
     background-color: #ffd700;
     color: #4d1979;
 }
+
+/* Show dropdown only when hovering over the parent nav-item */
+.main-nav .nav-item:hover .dropdown {
+    display: block;
+}
+
 
 /* Centered Title and Description */
 .title-container {
