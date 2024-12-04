@@ -1,0 +1,111 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4d1979;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    z-index: 10;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav li a:hover {
+    color: #ffd700;
+}
+
+/* Main Content Styling */
+.content-section {
+    text-align: center; /* Center-align title and description */
+    padding: 5rem 1rem 2rem; /* Add top and bottom padding */
+}
+
+.title-container h1 {
+    font-size: 3rem; /* Large title font size */
+    color: #4d1979;
+    margin-bottom: 1rem;
+}
+
+.title-container p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Details Container for Content */
+.details-container {
+    max-width: 800px; /* Restrict width for readability */
+    margin: 0 auto; /* Center-align the container */
+    text-align: left; /* Keep text left-aligned for content readability */
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.8; /* Add spacing between lines */
+}
+
+.details-container h2 {
+    font-size: 1.8rem;
+    color: #4d1979;
+    margin-bottom: 1rem;
+}
+
+.details-container ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+.details-container li {
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+/* Tailoring Tips Section */
+.tailoring-description,
+.tailoring-list {
+    margin-left: 11px; 
+}
+
+.tailoring-list {
+    padding-left: 1.5rem; 
+    line-height: 1.8;
+}
+
+
+
+/* Footer Styling */
+.footer {
+    width: 100%;
+    background-color: #4d1979;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
