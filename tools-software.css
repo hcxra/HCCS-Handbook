@@ -1,0 +1,147 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation Menu */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4d1979;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0; /* Match the padding */
+    z-index: 10;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* Match the spacing */
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  .nav-item > a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* Match the title block size */
+  }
+  
+  .nav-item > a:hover {
+    color: #ffd700;
+  }
+  
+  /* Dropdown Styling */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4d1979;
+    list-style: none;
+    padding: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-item:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown li a {
+    display: block;
+    padding: 0.75rem 1rem; /* Match dropdown item size */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown li a:hover {
+    background-color: #ffd700;
+    color: #4d1979;
+  }
+  
+  /* Page Content Section */
+  .content-section {
+    padding: 3rem 2rem; /* Match content section padding */
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 100px; /* Adjust for fixed nav bar */
+    text-align: center;
+  }
+  
+  .content-section h1 {
+    font-size: 2.8rem; /* Match title size */
+    margin-bottom: 1.5rem;
+    color: #4d1979;
+  }
+  
+  .content-section p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Containers Styling */
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container h2 {
+    font-size: 1.8rem;
+    color: #4d1979;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+/* Style for Ordered Lists */
+.container ol {
+    list-style-position: outside; /* Keeps numbers outside the text block */
+    margin: 0; /* Removes extra margins */
+    padding-left: 2rem; /* Creates space between numbers and text */
+  }
+  
+  .container ol li {
+    margin-bottom: 15px; /* Adds space between list items */
+    line-height: 1.6; /* Improves readability */
+    text-indent: 0; /* Ensures no extra indentation for the text */
+  }
+  
+  .container ol li ul {
+    list-style-type: circle; /* Circle bullets for sublist */
+    margin-left: 2rem; /* Indents sublist relative to parent list */
+    margin-top: 10px; /* Adds spacing above sublist */
+  }
+  
+  .container ol li ul li {
+    margin-bottom: 10px; /* Adds space between sublist items */
+  }
+  
+  
+  /* Footer Styling */
+  footer {
+    background-color: #4d1979;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  

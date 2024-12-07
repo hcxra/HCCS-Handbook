@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Networking</title>
+  <link rel="stylesheet" href="networking.css">
+  <script src="networking.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="internship-job.html">Back to Internship & Job Preparation</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section class="content-section">
+      <h1 class="page-title">Networking</h1>
+      <p class="subtitle">Effective strategies to build and maintain professional connections.</p>
+
+      <!-- Rotating Tips -->
+      <div class="tips">
+        <h2>Networking Tips</h2>
+        <p id="tip">Start by building your LinkedIn profile.</p>
+      </div>
+
+      <!-- Expandable Containers -->
+      <div class="container">
+        <h2 class="container-title" onclick="toggleContainer('careerFair')">Networking at a Career Fair</h2>
+        <div id="careerFair" class="container-content">
+          <p>At a career fair, approach recruiters with confidence. Start with a firm handshake and a brief introduction about yourself. Ask about the company’s culture and growth opportunities. Don’t forget to collect their contact information for follow-up.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2 class="container-title" onclick="toggleContainer('informationalInterview')">Informational Interview</h2>
+        <div id="informationalInterview" class="container-content">
+          <p>Reach out to professionals on LinkedIn or through mutual connections to schedule informational interviews. During the meeting, ask questions like:</p>
+          <ul>
+            <li>What does a typical day look like in your role?</li>
+            <li>How did you break into this field?</li>
+            <li>What advice would you give to someone starting out?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2 class="container-title" onclick="toggleContainer('meetups')">Attending a Meetup</h2>
+        <div id="meetups" class="container-content">
+          <p>When attending tech meetups, introduce yourself to others and engage in discussions about the event topic. Join group activities and exchange contact information to stay in touch after the event.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Networking Strategies | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
