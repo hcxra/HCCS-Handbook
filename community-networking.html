@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community and Networking</title>
   <link rel="stylesheet" href="community-networking.css">
+  <link rel="stylesheet" href="test.css">
   <script src="community-networking.js" defer></script>
 </head>
 <body>
@@ -42,15 +43,27 @@
 
       <div class="container">
         <h2>Chat Room</h2>
-        <p>A space where Hunter Computer Science students can engage with one another! Feel free to ask each other questions and form study groups!</p>
-        <div class="chatbox">
-          <div class="messages" id="messages">
-            <!-- Messages will appear here -->
+        <div class="chat-page">
+          <div class="msg-inbox">
+            <div class="chats">
+              <div class="msg-page" id="messages">
+                <!-- Messages will dynamically appear here -->
+              </div>
+            </div>
+            <div class="msg-bottom">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="messageInput"
+                  class="form-control"
+                  placeholder="Write message..."
+                />
+                <span id="sendButton" class="input-group-text send-icon">
+                  <i class="bi bi-send"></i>
+                </span>
+              </div>
+            </div>
           </div>
-          <form id="chatForm">
-            <input type="text" id="messageInput" placeholder="Type your message here..." required />
-            <button type="submit">Send</button>
-          </form>
         </div>
       </div>
 
@@ -74,5 +87,32 @@
   <footer>
     <p>&copy; 2024 Community and Networking | Hunter College Computer Science</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const messages = document.getElementById('messages');
+      const messageInput = document.getElementById('messageInput');
+      const sendButton = document.getElementById('sendButton');
+
+      sendButton.addEventListener('click', () => {
+        const text = messageInput.value.trim();
+        if (text) {
+          const outgoingMessage = document.createElement('div');
+          outgoingMessage.classList.add('outgoing-chats');
+
+          const messageContent = document.createElement('div');
+          messageContent.classList.add('outgoing-msg');
+          const messageText = document.createElement('p');
+          messageText.textContent = text;
+          messageContent.appendChild(messageText);
+
+          outgoingMessage.appendChild(messageContent);
+          messages.appendChild(outgoingMessage);
+          messageInput.value = '';
+          messages.scrollTop = messages.scrollHeight;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
