@@ -20,18 +20,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const messages = document.getElementById('messages');
-    const chatForm = document.getElementById('chatForm');
     const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
 
-    chatForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const message = messageInput.value.trim();
-        if (message) {
-            const messageDiv = document.createElement('div');
-            messageDiv.textContent = message;
-            messages.appendChild(messageDiv);
+    // Handle send button click
+    sendButton.addEventListener('click', () => {
+        const text = messageInput.value.trim();
+        if (text) {
+            const outgoingMessage = document.createElement('div');
+            outgoingMessage.classList.add('outgoing-chats');
+
+            const messageContent = document.createElement('div');
+            messageContent.classList.add('outgoing-msg');
+            const messageText = document.createElement('p');
+            messageText.textContent = text;
+            messageContent.appendChild(messageText);
+
+            outgoingMessage.appendChild(messageContent);
+            messages.appendChild(outgoingMessage);
             messageInput.value = '';
-            messages.scrollTop = messages.scrollHeight; // Auto-scroll to the bottom
+            messages.scrollTop = messages.scrollHeight;
+        }
+    });
+
+    // Handle pressing Enter key
+    messageInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            sendButton.click();
         }
     });
 });
