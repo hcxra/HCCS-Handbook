@@ -23,13 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchConferences() {
         const conferenceList = document.getElementById('conference-list');
         try {
-            const response = await fetch('https://api.conferences.globalcs.org/upcoming');
+            const response = await fetch('https://confs.tech/api');
             const conferences = await response.json();
-            conferenceList.innerHTML = '<ul>' + conferences.map(conference => `<li>${conference.name} - ${conference.date}</li>`).join('') + '</ul>';
+            conferenceList.innerHTML = '<ul>' +
+                conferences.map(conference => `<li>${conference.name} - ${conference.date}</li>`).join('') +
+                '</ul>';
         } catch (error) {
+            console.error("Error fetching conferences:", error);
             conferenceList.innerHTML = '<p>Error loading conferences. Please try again later.</p>';
         }
     }
-
-    fetchConferences();
-});
+    document.addEventListener('DOMContentLoaded', fetchConferences);

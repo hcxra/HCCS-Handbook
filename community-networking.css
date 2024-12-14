@@ -35,67 +35,35 @@ body {
     color: #ffd700;
 }
 
-.dropdown {
+/* Dropdown Styling */
+  .dropdown {
     display: none;
     position: absolute;
-    top: 100%; /* Ensures the dropdown starts just below the parent menu item */
+    top: 100%;
     left: 0;
-    background-color: #4d1979; /* Matches the nav bar color */
+    background-color: #4d1979;
     list-style: none;
     padding: 0;
-    min-width: 180px; /* Ensures dropdown width */
-    border-radius: 4px; /* Smooth corner rounding */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    z-index: 1000; /* Keeps it above other content */
-}
-
-/* Dropdown Items */
-.dropdown li a {
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-item:hover .dropdown {
     display: block;
-    padding: 0.75rem 1rem; /* Consistent spacing for links */
-    color: #fff; /* Text color for dropdown items */
-    text-decoration: none; /* Removes underline from links */
-    font-size: 0.9rem; /* Slightly smaller font */
-}
-
-/* Hover Effect for Dropdown Items */
-.dropdown li a:hover {
-    background-color: #ffd700; /* Highlighted background color */
-    color: #4d1979; /* Contrasting text color */
-}
-
-/* Show Dropdown on Hover */
-.nav-item:hover .dropdown {
-    display: block; /* Shows dropdown on hover */
-}
-
-/* Fix Nav Bar Item Alignment */
-.main-nav {
-    display: flex;
-    justify-content: space-between; /* Spreads out items */
-    align-items: center;
-    padding: 1rem 2rem; /* Adjust padding for better spacing */
-    background-color: #4d1979; /* Matches theme */
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem; /* Space between main menu items */
-    margin: 0; /* Remove extra margins */
-    padding: 0;
-}
-
-.nav-item > a {
-    color: #fff; /* White text for nav items */
-    text-decoration: none; /* No underline for nav links */
-    font-weight: bold; /* Bold font for better readability */
-    padding: 0.5rem 1rem; /* Adjust spacing for better click area */
-}
-
-.nav-item > a:hover {
-    color: #ffd700; /* Highlight on hover */
-}
+  }
+  
+  .dropdown li a {
+    display: block;
+    padding: 0.75rem 1rem; /* Match dropdown item size */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown li a:hover {
+    background-color: #ffd700;
+    color: #4d1979;
+  }
 /* Centering Content with Margins */
 .content-section, .container {
     margin: 0 auto;
@@ -191,3 +159,15 @@ body {
     border-left: 3px solid #4d1979;
     border-radius: 5px;
 }
+
+
+  /* Footer Styling */
+  footer {
+    background-color: #4d1979;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
+  
