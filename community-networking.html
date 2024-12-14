@@ -6,6 +6,12 @@
   <div id="thread-creation">
     <input
       type="text"
+      id="username"
+      placeholder="Your Username"
+      class="form-control"
+    />
+    <input
+      type="text"
       id="threadTitle"
       placeholder="Thread Title"
       class="form-control"
@@ -17,6 +23,7 @@
     ></textarea>
     <button id="createThreadButton">Create Thread</button>
   </div>
+
 
   <!-- Threads List -->
   <div id="threads">
@@ -31,16 +38,19 @@
     <h3 id="threadTitleDisplay"></h3>
     <p id="threadContentDisplay"></p>
     <div id="replySection">
+      <h4>Replies</h4>
+      <ul id="replyList"></ul>
+      <input
+        type="text"
+        id="replyUsername"
+        placeholder="Your Username"
+        class="form-control"
+      />
       <textarea
         id="replyContent"
         placeholder="Write your reply..."
         class="form-control"
       ></textarea>
-      <button id="addReplyButton">Reply</button>
+      <button id="replyButton">Post Reply</button>
     </div>
-    <ul id="repliesList">
-      <!-- Replies will appear here -->
-    </ul>
-    <button id="backToThreads">Back to Threads</button>
   </div>
-</div>

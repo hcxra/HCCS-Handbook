@@ -9,81 +9,95 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Chat room click functionality
-    const chatRoom = document.querySelector('.chat-room');
-    if (chatRoom) {
-        chatRoom.addEventListener('click', () => {
-            alert('Engage with other students in the chat room feature!');
-        });
-    }
-});
+    // Render Threads on Page Load
+    renderThreads();
 
-ddocument.addEventListener('DOMContentLoaded', () => {
-    const threads = JSON.parse(localStorage.getItem('threads')) || [];
-    const threadsList = document.getElementById('threadsList');
-    const threadCreation = document.getElementById('thread-creation');
-    const repliesSection = document.getElementById('replies');
-    const threadTitleDisplay = document.getElementById('threadTitleDisplay');
-    const threadContentDisplay = document.getElementById('threadContentDisplay');
-    const repliesList = document.getElementById('repliesList');
-    const backToThreads = document.getElementById('backToThreads');
-
-    function renderThreads() {
-        threadsList.innerHTML = '';
-        threads.forEach((thread, index) => {
-            const li = document.createElement('li');
-            li.textContent = thread.title;
-            li.dataset.index = index;
-            li.addEventListener('click', () => openThread(index));
-            threadsList.appendChild(li);
-        });
-    }
-
-    function openThread(index) {
-        const thread = threads[index];
-        threadTitleDisplay.textContent = thread.title;
-        threadContentDisplay.textContent = thread.content;
-
-        repliesList.innerHTML = '';
-        thread.replies.forEach(reply => {
-            const li = document.createElement('li');
-            li.textContent = reply;
-            repliesList.appendChild(li);
-        });
-
-        threadCreation.style.display = 'none';
-        repliesSection.style.display = 'block';
-    }
-
+    // Thread Creation Handler
     document.getElementById('createThreadButton').addEventListener('click', () => {
+        const username = document.getElementById('username').value.trim();
         const title = document.getElementById('threadTitle').value.trim();
         const content = document.getElementById('threadContent').value.trim();
 
-        if (title && content) {
-            threads.push({ title, content, replies: [] });
+        if (username && title && content) {
+            const thread = {
+                username,
+                title,
+                content,
+                replies: []
+            };
+
+            // Save the thread to localStorage
+            const threads = JSON.parse(localStorage.getItem('threads')) || [];
+            threads.push(thread);
             localStorage.setItem('threads', JSON.stringify(threads));
+
+            // Render updated threads
             renderThreads();
+
+            // Clear input fields
+            document.getElementById('username').value = '';
             document.getElementById('threadTitle').value = '';
             document.getElementById('threadContent').value = '';
         }
     });
+});
 
-    document.getElementById('addReplyButton').addEventListener('click', () => {
-        const index = threads.findIndex(thread => thread.title === threadTitleDisplay.textContent);
+// Function to Render Threads
+function renderThreads() {
+    const threads = JSON.parse(localStorage.getItem('threads')) || [];
+    const threadsList = document.getElementById('threadsList');
+    threadsList.innerHTML = '';
+
+    threads.forEach((thread, index) => {
+        const threadItem = document.createElement('li');
+        threadItem.innerHTML = `<strong>${thread.title}</strong> by ${thread.username}`;
+        threadItem.addEventListener('click', () => {
+            showThread(index);
+        });
+        threadsList.appendChild(threadItem);
+    });
+}
+
+// Function to Show a Thread and its Replies
+function showThread(index) {
+    const threads = JSON.parse(localStorage.getItem('threads')) || [];
+    const thread = threads[index];
+
+    // Display thread title and content
+    document.getElementById('threadTitleDisplay').textContent = thread.title;
+    document.getElementById('threadContentDisplay').textContent = thread.content;
+
+    // Render Replies
+    const replyList = document.getElementById('replyList');
+    replyList.innerHTML = '';
+    thread.replies.forEach(reply => {
+        const replyItem = document.createElement('li');
+        replyItem.classList.add('reply');
+        replyItem.innerHTML = `<strong>${reply.username}:</strong> ${reply.content}`;
+        replyList.appendChild(replyItem);
+    });
+
+    document.getElementById('replies').style.display = 'block';
+
+    // Handle Posting a Reply
+    document.getElementById('replyButton').onclick = () => {
+        const replyUsername = document.getElementById('replyUsername').value.trim();
         const replyContent = document.getElementById('replyContent').value.trim();
 
-        if (replyContent) {
-            threads[index].replies.push(replyContent);
+        if (replyUsername && replyContent) {
+            thread.replies.push({ username: replyUsername, content: replyContent });
+            threads[index] = thread;
             localStorage.setItem('threads', JSON.stringify(threads));
+
+            // Re-render replies
+            showThread(index);
+
+            // Clear input fields
+            document.getElementById('replyUsername').value = '';
             document.getElementById('replyContent').value = '';
-            openThread(index);
         }
-    });
+    };
+}
 
-    backToThreads.addEventListener('click', () => {
-        threadCreation.style.display = 'block';
-        repliesSection.style.display = 'none';
-    });
 
-    renderThreads();
-});
+
