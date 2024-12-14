@@ -156,6 +156,84 @@ body {
     background-color: #3a1462;
 }
 
+/* Thread Creation */
+#thread-creation {
+    margin-bottom: 20px;
+}
+
+#thread-creation input,
+#thread-creation textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#thread-creation button {
+    background-color: #4d1979;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#thread-creation button:hover {
+    background-color: #3a1462;
+}
+
+/* Threads List */
+#threads {
+    margin-top: 20px;
+}
+
+#threadsList {
+    list-style: none;
+    padding: 0;
+}
+
+#threadsList li {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#threadsList li:hover {
+    background-color: #ddd;
+}
+
+/* Replies Section */
+#replies {
+    margin-top: 20px;
+}
+
+#replies h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #4d1979;
+}
+
+.reply {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #4d1979;
+    border-radius: 5px;
+}
+
+.reply p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
 footer {
     background-color: #4d1979;
     color: #fff;

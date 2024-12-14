@@ -18,35 +18,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const messages = document.getElementById('messages');
-    const messageInput = document.getElementById('messageInput');
-    const sendButton = document.getElementById('sendButton');
+ddocument.addEventListener('DOMContentLoaded', () => {
+    const threads = JSON.parse(localStorage.getItem('threads')) || [];
+    const threadsList = document.getElementById('threadsList');
+    const threadCreation = document.getElementById('thread-creation');
+    const repliesSection = document.getElementById('replies');
+    const threadTitleDisplay = document.getElementById('threadTitleDisplay');
+    const threadContentDisplay = document.getElementById('threadContentDisplay');
+    const repliesList = document.getElementById('repliesList');
+    const backToThreads = document.getElementById('backToThreads');
 
-    // Handle send button click
-    sendButton.addEventListener('click', () => {
-        const text = messageInput.value.trim();
-        if (text) {
-            const outgoingMessage = document.createElement('div');
-            outgoingMessage.classList.add('outgoing-chats');
+    function renderThreads() {
+        threadsList.innerHTML = '';
+        threads.forEach((thread, index) => {
+            const li = document.createElement('li');
+            li.textContent = thread.title;
+            li.dataset.index = index;
+            li.addEventListener('click', () => openThread(index));
+            threadsList.appendChild(li);
+        });
+    }
 
-            const messageContent = document.createElement('div');
-            messageContent.classList.add('outgoing-msg');
-            const messageText = document.createElement('p');
-            messageText.textContent = text;
-            messageContent.appendChild(messageText);
+    function openThread(index) {
+        const thread = threads[index];
+        threadTitleDisplay.textContent = thread.title;
+        threadContentDisplay.textContent = thread.content;
 
-            outgoingMessage.appendChild(messageContent);
-            messages.appendChild(outgoingMessage);
-            messageInput.value = '';
-            messages.scrollTop = messages.scrollHeight;
+        repliesList.innerHTML = '';
+        thread.replies.forEach(reply => {
+            const li = document.createElement('li');
+            li.textContent = reply;
+            repliesList.appendChild(li);
+        });
+
+        threadCreation.style.display = 'none';
+        repliesSection.style.display = 'block';
+    }
+
+    document.getElementById('createThreadButton').addEventListener('click', () => {
+        const title = document.getElementById('threadTitle').value.trim();
+        const content = document.getElementById('threadContent').value.trim();
+
+        if (title && content) {
+            threads.push({ title, content, replies: [] });
+            localStorage.setItem('threads', JSON.stringify(threads));
+            renderThreads();
+            document.getElementById('threadTitle').value = '';
+            document.getElementById('threadContent').value = '';
         }
     });
 
-    // Handle pressing Enter key
-    messageInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            sendButton.click();
+    document.getElementById('addReplyButton').addEventListener('click', () => {
+        const index = threads.findIndex(thread => thread.title === threadTitleDisplay.textContent);
+        const replyContent = document.getElementById('replyContent').value.trim();
+
+        if (replyContent) {
+            threads[index].replies.push(replyContent);
+            localStorage.setItem('threads', JSON.stringify(threads));
+            document.getElementById('replyContent').value = '';
+            openThread(index);
         }
     });
+
+    backToThreads.addEventListener('click', () => {
+        threadCreation.style.display = 'block';
+        repliesSection.style.display = 'none';
+    });
+
+    renderThreads();
 });
