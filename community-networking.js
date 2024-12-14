@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Render Threads on Page Load
+    // Render threads on page load
     renderThreads();
 
-    // Thread Creation Handler
+    // Handle thread creation
     document.getElementById('createThreadButton').addEventListener('click', () => {
         const username = document.getElementById('username').value.trim();
         const title = document.getElementById('threadTitle').value.trim();
@@ -26,15 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 replies: []
             };
 
-            // Save the thread to localStorage
+            // Append the new thread to the list (localStorage for simplicity)
             const threads = JSON.parse(localStorage.getItem('threads')) || [];
             threads.push(thread);
             localStorage.setItem('threads', JSON.stringify(threads));
 
-            // Render updated threads
+            // Render threads
             renderThreads();
-
-            // Clear input fields
             document.getElementById('username').value = '';
             document.getElementById('threadTitle').value = '';
             document.getElementById('threadContent').value = '';
@@ -42,10 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Function to Render Threads
+// Render Threads Function
 function renderThreads() {
     const threads = JSON.parse(localStorage.getItem('threads')) || [];
     const threadsList = document.getElementById('threadsList');
+    
+    // Clear only the threads list
     threadsList.innerHTML = '';
 
     threads.forEach((thread, index) => {
@@ -58,16 +58,14 @@ function renderThreads() {
     });
 }
 
-// Function to Show a Thread and its Replies
+// Display a Thread and Its Replies
 function showThread(index) {
     const threads = JSON.parse(localStorage.getItem('threads')) || [];
     const thread = threads[index];
 
-    // Display thread title and content
     document.getElementById('threadTitleDisplay').textContent = thread.title;
     document.getElementById('threadContentDisplay').textContent = thread.content;
 
-    // Render Replies
     const replyList = document.getElementById('replyList');
     replyList.innerHTML = '';
     thread.replies.forEach(reply => {
@@ -79,7 +77,7 @@ function showThread(index) {
 
     document.getElementById('replies').style.display = 'block';
 
-    // Handle Posting a Reply
+    // Handle posting a reply
     document.getElementById('replyButton').onclick = () => {
         const replyUsername = document.getElementById('replyUsername').value.trim();
         const replyContent = document.getElementById('replyContent').value.trim();
@@ -91,13 +89,8 @@ function showThread(index) {
 
             // Re-render replies
             showThread(index);
-
-            // Clear input fields
             document.getElementById('replyUsername').value = '';
             document.getElementById('replyContent').value = '';
         }
     };
 }
-
-
-

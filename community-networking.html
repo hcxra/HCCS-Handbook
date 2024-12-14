@@ -1,56 +1,123 @@
-<div class="container">
-  <h2>Forum</h2>
-  <p>Create threads and engage with others:</p>
-
-  <!-- Thread Creation -->
-  <div id="thread-creation">
-    <input
-      type="text"
-      id="username"
-      placeholder="Your Username"
-      class="form-control"
-    />
-    <input
-      type="text"
-      id="threadTitle"
-      placeholder="Thread Title"
-      class="form-control"
-    />
-    <textarea
-      id="threadContent"
-      placeholder="Thread Content"
-      class="form-control"
-    ></textarea>
-    <button id="createThreadButton">Create Thread</button>
-  </div>
-
-
-  <!-- Threads List -->
-  <div id="threads">
-    <h3>Threads</h3>
-    <ul id="threadsList">
-      <!-- Threads will appear here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community and Networking</title>
+  <link rel="stylesheet" href="community-networking.css">
+  <script src="community-networking.js" defer></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul>
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a href="#">Academics</a>
+        <ul class="dropdown">
+          <li><a href="course-roadmap.html">Course Recommendations & Roadmap</a></li>
+          <li><a href="study-resources.html">Study Resources</a></li>
+          <li><a href="tools-software.html">Tools and Software</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#">Career Preparation</a>
+        <ul class="dropdown">
+          <li><a href="project-portfolio.html">Project Ideas & Portfolio Building</a></li>
+          <li><a href="internship-job.html">Internship & Job Preparation</a></li>
+          <li><a href="career-pathways.html">Career Pathways & Certifications</a></li>
+          <li><a href="research-conferences.html">Research & Conferences</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#">Community</a>
+        <ul class="dropdown">
+          <li><a href="community-networking.html">Community and Networking</a></li>
+        </ul>
+      </li>
     </ul>
-  </div>
+  </nav>
 
-  <!-- Thread Replies -->
-  <div id="replies" style="display: none;">
-    <h3 id="threadTitleDisplay"></h3>
-    <p id="threadContentDisplay"></p>
-    <div id="replySection">
-      <h4>Replies</h4>
-      <ul id="replyList"></ul>
-      <input
-        type="text"
-        id="replyUsername"
-        placeholder="Your Username"
-        class="form-control"
-      />
-      <textarea
-        id="replyContent"
-        placeholder="Write your reply..."
-        class="form-control"
-      ></textarea>
-      <button id="replyButton">Post Reply</button>
-    </div>
-  </div>
+  <main>
+    <section class="content-section">
+      <h1>Community and Networking</h1>
+      <p>Your go-to guide for connecting with the Computer Science community, joining clubs, and building a strong network for academic and professional growth.</p>
+
+      <!-- Chat Forum Section -->
+      <div class="container">
+        <h2>Forum</h2>
+        <p>Create threads and engage with others:</p>
+
+        <!-- Thread Creation -->
+        <div id="thread-creation">
+          <input
+            type="text"
+            id="username"
+            placeholder="Your Username"
+            class="form-control"
+          />
+          <input
+            type="text"
+            id="threadTitle"
+            placeholder="Thread Title"
+            class="form-control"
+          />
+          <textarea
+            id="threadContent"
+            placeholder="Thread Content"
+            class="form-control"
+          ></textarea>
+          <button id="createThreadButton">Create Thread</button>
+        </div>
+
+        <!-- Threads List -->
+        <div id="threads">
+          <h3>Threads</h3>
+          <ul id="threadsList"></ul>
+        </div>
+
+        <!-- Replies Section -->
+        <div id="replies" style="display: none;">
+          <h3 id="threadTitleDisplay"></h3>
+          <p id="threadContentDisplay"></p>
+          <div id="replySection">
+            <h4>Replies</h4>
+            <ul id="replyList"></ul>
+            <input
+              type="text"
+              id="replyUsername"
+              placeholder="Your Username"
+              class="form-control"
+            />
+            <textarea
+              id="replyContent"
+              placeholder="Write your reply..."
+              class="form-control"
+            ></textarea>
+            <button id="replyButton">Post Reply</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Engage with Clubs Section -->
+      <div class="container">
+        <h2>Engage with Clubs</h2>
+        <p>Explore opportunities to join and actively participate in clubs such as:</p>
+        <ul>
+          <li><strong>Computer Science Club</strong>: A great way to network, participate in hackathons, and engage in tech talks. <a href="https://www.instagram.com/huntercsclub/" target="_blank">Visit Instagram</a></li>
+          <li><strong>Women in Computer Science</strong>: A supportive community fostering growth and collaboration among women in CS. <a href="mailto:girlswhocodehuntercollege@gmail.com">Email Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Career Support Section -->
+      <div class="container">
+        <h2>Career Support</h2>
+        <p>The CS department provides career assistance, including personalized advice and curated opportunities. Look out for updates via email or schedule one-on-one sessions for tailored guidance on your career path and resume building.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Community and Networking | Hunter College Computer Science</p>
+  </footer>
+</body>
+</html>
