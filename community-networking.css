@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Navigation Menu */
 .main-nav {
     position: fixed;
     top: 0;
@@ -23,10 +22,6 @@ body {
     list-style: none;
     display: flex;
     gap: 2rem;
-}
-
-.nav-item {
-    position: relative;
 }
 
 .nav-item > a {
@@ -70,6 +65,13 @@ body {
     color: #4d1979;
 }
 
+/* Centering Content */
+.content-section, .container {
+    margin: 0 auto;
+    max-width: calc(100% - 4in); /* 2-inch margins on each side */
+    padding: 1rem;
+}
+
 /* Chatbox Styling */
 .msg-page {
     max-height: 400px;
@@ -85,7 +87,7 @@ body {
 }
 
 .outgoing-msg {
-    background-color: #a9a9a9; /* Changed to plain grey */
+    background-color: #a9a9a9;
     color: white;
     border-radius: 10px;
     padding: 10px;
