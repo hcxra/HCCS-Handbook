@@ -65,11 +65,19 @@ body {
     color: #4d1979;
 }
 
-/* Centering Content */
+/* Centering Content with Margins */
 .content-section, .container {
     margin: 0 auto;
-    max-width: calc(100% - 4in); /* 2-inch margins on each side */
+    max-width: 800px; /* Ensures content does not exceed a certain width */
     padding: 1rem;
+    box-sizing: border-box; /* Ensures padding is included within width */
+}
+
+/* Adds 2-inch margins on both sides dynamically */
+@media (min-width: 1200px) {
+    .content-section, .container {
+        max-width: calc(100% - 4in);
+    }
 }
 
 /* Chatbox Styling */
@@ -148,7 +156,6 @@ body {
     background-color: #3a1462;
 }
 
-/* Footer Styling */
 footer {
     background-color: #4d1979;
     color: #fff;

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undergraduate Research & CS Conferences</title>
+  <link rel="stylesheet" href="tools-software.css">
+  <script src="tools-software.js" defer></script>
+</head>
+<body>
+  <nav class="main-nav">
+    <ul>
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a href="#">Academics</a>
+        <ul class="dropdown">
+          <li><a href="course-roadmap.html">Course Recommendations & Roadmap</a></li>
+          <li><a href="study-resources.html">Study Resources</a></li>
+          <li><a href="tools-software.html">Tools and Software</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#">Research</a>
+        <ul class="dropdown">
+          <li><a href="research-conferences.html">Research & Conferences</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="content-section">
+      <h1>Getting Involved in Research and Conferences</h1>
+      <p>Learn how to kickstart your research journey, understand computer science conferences, and make the most out of your experience!</p>
+
+      <div class="container">
+        <h2>Getting Started with Research</h2>
+        <ol>
+          <li>Identify your area of interest. Explore topics in AI, cybersecurity, data science, etc.</li>
+          <li>Connect with faculty members or research labs at your university.</li>
+          <li>Participate in undergraduate research programs such as REUs (Research Experiences for Undergraduates).</li>
+          <li>Build a strong foundation in your chosen area by completing relevant courses.</li>
+          <li>Document your findings and share your work through blogs or presentations.</li>
+        </ol>
+      </div>
+
+      <div class="container">
+        <h2>Types of Computer Science Conferences</h2>
+        <ul>
+          <li><strong>Academic Conferences:</strong> SIGCOMM, ICML, CVPR</li>
+          <li><strong>Industry-focused Events:</strong> AWS re:Invent, Google I/O</li>
+          <li><strong>Hackathons:</strong> Major League Hacking (MLH) events</li>
+          <li><strong>Workshops:</strong> Specialized gatherings on specific technologies or methods</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <h2>Presenting at a Conference</h2>
+        <ol>
+          <li>Submit your research paper or poster by the conference deadline.</li>
+          <li>Prepare a clear and engaging presentation or poster design.</li>
+          <li>Practice your presentation and anticipate questions.</li>
+          <li>Network with other attendees and exchange ideas.</li>
+        </ol>
+      </div>
+
+      <div class="container">
+        <h2>Making the Most Out of a Conference</h2>
+        <ul>
+          <li>Attend keynote sessions and workshops.</li>
+          <li>Network with industry professionals and researchers.</li>
+          <li>Engage with sponsors and explore opportunities.</li>
+          <li>Follow up with contacts post-conference to build connections.</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <h2>Explore Upcoming CS Conferences</h2>
+        <p>Check out the latest CS conferences happening globally:</p>
+        <div id="conference-list">
+          <p>Loading conferences...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Research & Conferences Guide | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    async function fetchConferences() {
+      const conferenceList = document.getElementById('conference-list');
+      try {
+        const response = await fetch('https://api.conferences.globalcs.org/upcoming');
+        const conferences = await response.json();
+        conferenceList.innerHTML = '<ul>' + conferences.map(conference => `<li>${conference.name} - ${conference.date}</li>`).join('') + '</ul>';
+      } catch (error) {
+        conferenceList.innerHTML = '<p>Error loading conferences. Please try again later.</p>';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', fetchConferences);
+  </script>
+</body>
+</html>
