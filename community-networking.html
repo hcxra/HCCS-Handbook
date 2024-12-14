@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community and Networking</title>
-  <link rel="stylesheet" href="community-networking.css">
-  <link rel="stylesheet" href="test.css">
-  <script src="community-networking.js" defer></script>
+  <link rel="stylesheet" href="research-conferences.css">
+  <script src="research-conferences.js" defer></script>
 </head>
 <body>
   <nav class="main-nav">
@@ -26,7 +25,7 @@
           <li><a href="project-portfolio.html">Project Ideas & Portfolio Building</a></li>
           <li><a href="internship-job.html">Internship & Job Preparation</a></li>
           <li><a href="career-pathways.html">Career Pathways & Certifications</a></li>
-          <li><a href="research-conferences.hmtl">Research & Conferences</a></li>
+          <li><a href="research-conferences.html">Research & Conferences</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -40,10 +39,12 @@
 
   <main>
     <section class="content-section">
-      <h1 class="page-title">Community and Networking</h1>
+      <h1>Community and Networking</h1>
+      <p>Your go-to guide for connecting with the Computer Science community, joining clubs, and building a strong network for academic and professional growth.</p>
 
       <div class="container">
         <h2>Chat Room</h2>
+        <p>Join the live chat room to interact with peers, discuss ideas, and share opportunities:</p>
         <div class="chat-page">
           <div class="msg-inbox">
             <div class="chats">
@@ -70,26 +71,16 @@
 
       <div class="container">
         <h2>Engage with Clubs</h2>
-        <p>At Hunter College, there are a few ways to engage with your fellow Computer Science students outside of class. One way is through clubs, specifically the Computer Science Club and the Women in Computer Science Club. Both clubs have frequent meetups, ranging from meet-and-greets, hackathons, interview practice, group meals, trips to companies, and holiday celebrations.</p>
-        <p><strong>Links:</strong></p>
+        <p>Explore opportunities to join and actively participate in clubs such as:</p>
         <ul>
-          <li>
-            Computer Science Club: 
-            <a href="https://www.instagram.com/huntercsclub/" target="_blank">
-              Visit Instagram
-            </a>
-          </li>
-          <li>
-            Women in Computer Science Club: 
-            <a href="mailto:girlswhocodehuntercollege@gmail.com" target="_blank">
-              Send an Email
-            </a>
-          </li>
+          <li><strong>Computer Science Club</strong>: A great way to network, participate in hackathons, and engage in tech talks. <a href="https://www.instagram.com/huntercsclub/" target="_blank">Visit Instagram</a></li>
+          <li><strong>Women in Computer Science</strong>: A supportive community fostering growth and collaboration among women in CS. <a href="mailto:girlswhocodehuntercollege@gmail.com">Email Us</a></li>
         </ul>
+      </div>
 
       <div class="container">
         <h2>Career Support</h2>
-        <p>As a Computer Science student, you’ll get added to an email list that frequently receives emails from Elise Harris, Programs Manager for the Computer Science Department. She searches for and receives information on programs, internships, and full-time positions that computer science students can apply for. You can also schedule a one-on-one appointment with her to talk about your possible career path and to work on your resume.</p>
+        <p>The CS department provides career assistance, including personalized advice and curated opportunities. Look out for updates via email or schedule one-on-one sessions for tailored guidance on your career path and resume building.</p>
       </div>
     </section>
   </main>
@@ -97,32 +88,5 @@
   <footer>
     <p>&copy; 2024 Community and Networking | Hunter College Computer Science</p>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const messages = document.getElementById('messages');
-      const messageInput = document.getElementById('messageInput');
-      const sendButton = document.getElementById('sendButton');
-
-      sendButton.addEventListener('click', () => {
-        const text = messageInput.value.trim();
-        if (text) {
-          const outgoingMessage = document.createElement('div');
-          outgoingMessage.classList.add('outgoing-chats');
-
-          const messageContent = document.createElement('div');
-          messageContent.classList.add('outgoing-msg');
-          const messageText = document.createElement('p');
-          messageText.textContent = text;
-          messageContent.appendChild(messageText);
-
-          outgoingMessage.appendChild(messageContent);
-          messages.appendChild(outgoingMessage);
-          messageInput.value = '';
-          messages.scrollTop = messages.scrollHeight;
-        }
-      });
-    });
-  </script>
 </body>
 </html>
