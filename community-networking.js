@@ -1,11 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle dropdown menus
+    // Dropdown menu functionality
     document.querySelectorAll('.nav-item').forEach(item => {
         const dropdown = item.querySelector('.dropdown');
 
         if (dropdown) {
-            item.addEventListener('mouseenter', () => dropdown.style.display = 'block');
-            item.addEventListener('mouseleave', () => dropdown.style.display = 'none');
+            // Show dropdown on hover
+            item.addEventListener('mouseenter', () => {
+                dropdown.style.display = 'block';
+            });
+
+            // Hide dropdown when mouse leaves
+            item.addEventListener('mouseleave', () => {
+                dropdown.style.display = 'none';
+            });
         }
     });
 
