@@ -27,7 +27,7 @@
             <ul class="dropdown">
                 <li><a href="project-portfolio.html">Project Ideas & Portfolio Building</a></li>
                 <li><a href="internship-job.html">Internship & Job Preparation</a></li>
-                <li><a href="#career-pathways">Career Pathways & Certifications</a></li>
+                <li><a href="career-pathways">Career Pathways & Certifications</a></li>
                 <li><a href="research-conferences.html">Research & Conferences</a></li>
             </ul>
           </li>
@@ -60,6 +60,20 @@
       <h2 class="toggle-title">Algorithms</h2>
       <ul class="toggle-content">
         <li><a href="https://www.geeksforgeeks.org/sorting-algorithms/">Simple Algorithms</a>: Basic sorting and searching algorithms like bubble sort and binary search.</li>
+        <!-- Button to Launch Sorting Visualization -->
+        <div>
+          <button id="bubbleSortBtn" onclick="startBubbleSort()">Try Bubble Sort</button>
+        </div>
+
+        <!-- Canvas for Visualization -->
+        <div id="bubbleSortContainer" style="display:none;">
+          <p>Enter numbers (comma-separated):</p>
+          <input type="text" id="numbersInput" placeholder="e.g., 5,3,8,1,2">
+          <button onclick="runBubbleSort()">Sort Now</button>
+          <div>
+              <canvas id="bubbleSortCanvas" width="500" height="200"></canvas>
+          </div>
+        </div>
         <li><a href="https://www.geeksforgeeks.org/greedy-approach-vs-dynamic-programming/">Intermediate Algorithms</a>: Dynamic programming and greedy algorithms.</li>
         <li><a href="https://www.geeksforgeeks.org/divide-and-conquer/">Advanced Algorithms</a>: Graph traversal algorithms, and divide & conquer strategies.</li>
       </ul>
@@ -91,6 +105,6 @@
     <p>Created by Hunter CS Students | &copy; 2024 Hunter College</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="studyresourcesscript.js"></script>
 </body>
 </html>

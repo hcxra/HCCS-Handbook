@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+}
+
+/* Navigation Menu with Dropdown */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #4d1979;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  z-index: 10;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.nav-item > a:hover {
+  color: #ffd700;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #4d1979;
+  list-style: none;
+  padding: 0;
+  min-width: 180px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  background-color: #ffd700;
+  color: #4d1979;
+}
+/* Ensure dropdowns only appear when their parent is hovered */
+.main-nav .nav-item {
+  position: relative;
+}
+
+.main-nav .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #4d1979;
+  list-style: none;
+  min-width: 180px;
+  padding: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom, rgba(77, 25, 121, 0.8), rgba(77, 25, 121, 0.8)),
+    url('main-campus-768x768-alt.jpg.optimal.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ffd700;
+  color: #4d1979;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+.cta-button:hover {
+  background-color: #ffc133;
+}
+
+/* About Section */
+.about-section {
+  padding: 3rem;
+  text-align: center;
+  background-color: #f4f4f9;
+}
+
+.about-section ul {
+  list-style: none;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.featured-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.featured-item h3 {
+  color: #4d1979;
+  margin-bottom: 1rem;
+}
+
+.featured-item p {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #4d1979;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
