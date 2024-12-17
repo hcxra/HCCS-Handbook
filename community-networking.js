@@ -3,23 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-item').forEach(item => {
         const dropdown = item.querySelector('.dropdown');
 
-        // Ensure dropdown is hidden on page load
         if (dropdown) {
-            dropdown.style.display = 'none';
+            // Add hover events to show/hide dropdown
+            item.addEventListener('mouseenter', () => {
+                dropdown.style.display = 'block';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                dropdown.style.display = 'none';
+            });
         }
-
-        // Show dropdown on mouseenter
-        item.addEventListener('mouseenter', () => {
-            if (dropdown) dropdown.style.display = 'block';
-        });
-
-        // Hide dropdown on mouseleave
-        item.addEventListener('mouseleave', () => {
-            if (dropdown) dropdown.style.display = 'none';
-        });
     });
-});
-
 
     // Render threads on page load
     renderThreads();
@@ -45,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Render threads
             renderThreads();
+
+            // Clear form inputs
             document.getElementById('username').value = '';
             document.getElementById('threadTitle').value = '';
             document.getElementById('threadContent').value = '';
@@ -56,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderThreads() {
     const threads = JSON.parse(localStorage.getItem('threads')) || [];
     const threadsList = document.getElementById('threadsList');
-    
-    // Clear only the threads list
+
+    // Clear the threads list
     threadsList.innerHTML = '';
 
     threads.forEach((thread, index) => {
@@ -75,9 +71,11 @@ function showThread(index) {
     const threads = JSON.parse(localStorage.getItem('threads')) || [];
     const thread = threads[index];
 
+    // Display thread title and content
     document.getElementById('threadTitleDisplay').textContent = thread.title;
     document.getElementById('threadContentDisplay').textContent = thread.content;
 
+    // Display replies
     const replyList = document.getElementById('replyList');
     replyList.innerHTML = '';
     thread.replies.forEach(reply => {
@@ -95,12 +93,17 @@ function showThread(index) {
         const replyContent = document.getElementById('replyContent').value.trim();
 
         if (replyUsername && replyContent) {
+            // Add the new reply
             thread.replies.push({ username: replyUsername, content: replyContent });
             threads[index] = thread;
+
+            // Update local storage
             localStorage.setItem('threads', JSON.stringify(threads));
 
             // Re-render replies
             showThread(index);
+
+            // Clear form inputs
             document.getElementById('replyUsername').value = '';
             document.getElementById('replyContent').value = '';
         }
