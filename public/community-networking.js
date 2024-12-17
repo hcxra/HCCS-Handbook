@@ -1,20 +1,20 @@
+// Firebase Configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCMEDyNBPU_65YKz6H6LG9kbF03H-hZsbs",
+    authDomain: "web-dev-final-81bfa.firebaseapp.com",
+    databaseURL: "https://web-dev-final-81bfa.firebaseio.com",
+    projectId: "web-dev-final-81bfa",
+    storageBucket: "web-dev-final-81bfa.appspot.com",
+    messagingSenderId: "727644770926",
+    appId: "1:727644770926:web:b66ff2ca310fc86d690c7f",
+    measurementId: "G-2CZEJNEMNY"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.nav-item').forEach(item => {
-        const dropdown = item.querySelector('.dropdown');
-
-        if (dropdown) {
-            // Remove all default `display` logic
-            item.addEventListener('mouseenter', () => {
-                dropdown.style.display = 'block';
-            });
-
-            item.addEventListener('mouseleave', () => {
-                dropdown.style.display = 'none';
-            });
-        }
-    });
-
-
     // Render threads on page load
     renderThreads();
 
@@ -25,20 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = document.getElementById('threadContent').value.trim();
 
         if (username && title && content) {
-            const thread = {
-                username,
-                title,
-                content,
-                replies: []
-            };
-
-            // Append the new thread to the list (localStorage for simplicity)
-            const threads = JSON.parse(localStorage.getItem('threads')) || [];
-            threads.push(thread);
-            localStorage.setItem('threads', JSON.stringify(threads));
-
-            // Render threads
-            renderThreads();
+            const newThread = { username, title, content, replies: [] };
+            database.ref('threads').push(newThread);
 
             // Clear form inputs
             document.getElementById('username').value = '';
@@ -50,62 +38,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Render Threads Function
 function renderThreads() {
-    const threads = JSON.parse(localStorage.getItem('threads')) || [];
     const threadsList = document.getElementById('threadsList');
-
-    // Clear the threads list
     threadsList.innerHTML = '';
 
-    threads.forEach((thread, index) => {
-        const threadItem = document.createElement('li');
-        threadItem.innerHTML = `<strong>${thread.title}</strong> by ${thread.username}`;
-        threadItem.addEventListener('click', () => {
-            showThread(index);
+    database.ref('threads').on('value', snapshot => {
+        threadsList.innerHTML = '';
+        snapshot.forEach(threadSnapshot => {
+            const thread = threadSnapshot.val();
+            const threadItem = document.createElement('li');
+            threadItem.innerHTML = `<strong>${thread.title}</strong> by ${thread.username}`;
+            threadsList.appendChild(threadItem);
         });
-        threadsList.appendChild(threadItem);
     });
 }
 
+
+
 // Display a Thread and Its Replies
-function showThread(index) {
-    const threads = JSON.parse(localStorage.getItem('threads')) || [];
-    const thread = threads[index];
+function showThread(threadKey) {
+    const threadRef = database.ref('threads/' + threadKey);
 
-    // Display thread title and content
-    document.getElementById('threadTitleDisplay').textContent = thread.title;
-    document.getElementById('threadContentDisplay').textContent = thread.content;
+    threadRef.once('value', snapshot => {
+        const thread = snapshot.val();
 
-    // Display replies
-    const replyList = document.getElementById('replyList');
-    replyList.innerHTML = '';
-    thread.replies.forEach(reply => {
-        const replyItem = document.createElement('li');
-        replyItem.classList.add('reply');
-        replyItem.innerHTML = `<strong>${reply.username}:</strong> ${reply.content}`;
-        replyList.appendChild(replyItem);
+        // Display Thread Title and Content
+        document.getElementById('threadTitleDisplay').textContent = thread.title;
+        document.getElementById('threadContentDisplay').textContent = thread.content;
+
+        // Display Replies
+        const replyList = document.getElementById('replyList');
+        replyList.innerHTML = '';
+        (thread.replies || []).forEach(reply => {
+            const replyItem = document.createElement('li');
+            replyItem.classList.add('reply');
+            replyItem.innerHTML = `<strong>${reply.username}:</strong> ${reply.content}`;
+            replyList.appendChild(replyItem);
+        });
+
+        document.getElementById('replies').style.display = 'block';
+
+        // Handle Reply Submission
+        document.getElementById('replyButton').onclick = () => {
+            const replyUsername = document.getElementById('replyUsername').value.trim();
+            const replyContent = document.getElementById('replyContent').value.trim();
+
+            if (replyUsername && replyContent) {
+                // Add Reply to Firebase
+                const newReply = { username: replyUsername, content: replyContent };
+                threadRef.child('replies').set([...(thread.replies || []), newReply]);
+
+                // Re-render the thread
+                showThread(threadKey);
+
+                // Clear form inputs
+                document.getElementById('replyUsername').value = '';
+                document.getElementById('replyContent').value = '';
+            }
+        };
     });
-
-    document.getElementById('replies').style.display = 'block';
-
-    // Handle posting a reply
-    document.getElementById('replyButton').onclick = () => {
-        const replyUsername = document.getElementById('replyUsername').value.trim();
-        const replyContent = document.getElementById('replyContent').value.trim();
-
-        if (replyUsername && replyContent) {
-            // Add the new reply
-            thread.replies.push({ username: replyUsername, content: replyContent });
-            threads[index] = thread;
-
-            // Update local storage
-            localStorage.setItem('threads', JSON.stringify(threads));
-
-            // Re-render replies
-            showThread(index);
-
-            // Clear form inputs
-            document.getElementById('replyUsername').value = '';
-            document.getElementById('replyContent').value = '';
-        }
-    };
 }

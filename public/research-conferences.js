@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded'), () => {
     // Handle dropdown menus
     document.querySelectorAll('.nav-item').forEach(item => {
         const dropdown = item.querySelector('.dropdown');
@@ -18,12 +18,31 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dropdown) dropdown.style.display = 'none';
         });
     });
-
+}
     // Handle fetching conference data
     async function fetchConferences() {
         const conferenceList = document.getElementById('conference-list');
         try {
             const response = await fetch('https://confs.tech/api');
+            const conferences = await response.json();
+            conferenceList.innerHTML = '<ul>' +
+                conferences.map(conference => `<li>${conference.name} - ${conference.date}</li>`).join('') +
+                '</ul>';
+        } catch (error) {
+            console.error("Error fetching conferences:", error);
+            conferenceList.innerHTML = '<p>Error loading conferences. Please try again later.</p>';
+        }
+    }
+    document.addEventListener('DOMContentLoaded', fetchConferences);
+
+
+
+    async function fetchConferences() {
+        const conferenceList = document.getElementById('conference-list');
+        try {
+            const response = await fetch('/data/conferences.json');
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
             const conferences = await response.json();
             conferenceList.innerHTML = '<ul>' +
                 conferences.map(conference => `<li>${conference.name} - ${conference.date}</li>`).join('') +

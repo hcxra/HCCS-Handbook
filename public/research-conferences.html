@@ -6,6 +6,25 @@
   <title>Undergraduate Research & CS Conferences</title>
   <link rel="stylesheet" href="tools-software.css">
   <script src="tools-software.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+  <script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCMEDyNBPU_65YKz6H6LG9kbF03H-hZsbs",
+      authDomain: "web-dev-final-81bfa.firebaseapp.com",
+      projectId: "web-dev-final-81bfa",
+      storageBucket: "web-dev-final-81bfa.appspot.com",
+      messagingSenderId: "727644770926",
+      appId: "1:727644770926:web:b66ff2ca310fc86d690c7f",
+      measurementId: "G-2CZEJNEMNY"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+  </script>
+
 </head>
 <body>
   <nav class="main-nav">
@@ -25,7 +44,7 @@
           <li><a href="project-portfolio.html">Project Ideas & Portfolio Building</a></li>
           <li><a href="internship-job.html">Internship & Job Preparation</a></li>
           <li><a href="career-pathways.html">Career Pathways & Certifications</a></li>
-          <li><a href="research-conferences.hmtl">Research & Conferences</a></li>
+          <li><a href="research-conferences.html">Research & Conferences</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -46,7 +65,7 @@
         <h2>Getting Started with Research</h2>
         <ol>
           <li>Identify your area of interest. Explore topics in AI, cybersecurity, data science, etc.</li>
-          <li>Connect with faculty members or research labs at your university.</li>
+          <li>Connect with faculty members or research labs at Hunter College.</li>
           <li>Participate in undergraduate research programs such as REUs (Research Experiences for Undergraduates).</li>
           <li>Build a strong foundation in your chosen area by completing relevant courses.</li>
           <li>Document your findings and share your work through blogs or presentations.</li>
@@ -71,6 +90,8 @@
           <li>Practice your presentation and anticipate questions.</li>
           <li>Network with other attendees and exchange ideas.</li>
         </ol>
+        <ul>
+          <li>Hunter College has their own STEM conference every year. For 2025, the conference is on April 30th, while the abstract submission is February 10th and poster submission is March 30th.</li>
       </div>
 
       <div class="container">
@@ -115,3 +136,4 @@
   </script>
 </body>
 </html>
+
