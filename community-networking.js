@@ -1,4 +1,4 @@
-ddocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-item').forEach(item => {
         const dropdown = item.querySelector('.dropdown');
 
@@ -13,7 +13,7 @@ ddocument.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
+
 
     // Render threads on page load
     renderThreads();
