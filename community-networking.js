@@ -1,20 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dropdown menu functionality
+    // Handle dropdown menus
     document.querySelectorAll('.nav-item').forEach(item => {
         const dropdown = item.querySelector('.dropdown');
 
+        // Ensure dropdown is hidden on page load
         if (dropdown) {
-            // Show dropdown on hover
-            item.addEventListener('mouseenter', () => {
-                dropdown.style.display = 'block';
-            });
-
-            // Hide dropdown when mouse leaves
-            item.addEventListener('mouseleave', () => {
-                dropdown.style.display = 'none';
-            });
+            dropdown.style.display = 'none';
         }
+
+        // Show dropdown on mouseenter
+        item.addEventListener('mouseenter', () => {
+            if (dropdown) dropdown.style.display = 'block';
+        });
+
+        // Hide dropdown on mouseleave
+        item.addEventListener('mouseleave', () => {
+            if (dropdown) dropdown.style.display = 'none';
+        });
     });
+});
+
 
     // Render threads on page load
     renderThreads();

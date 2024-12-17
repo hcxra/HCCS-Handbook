@@ -35,8 +35,50 @@ body {
     color: #ffd700;
 }
 
-/* Dropdown Styling */
-  .dropdown {
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Menu */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4d1979;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    z-index: 10;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.nav-item > a:hover {
+    color: #ffd700;
+}
+
+.dropdown {
     display: none;
     position: absolute;
     top: 100%;
@@ -47,29 +89,32 @@ body {
     min-width: 180px;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .nav-item:hover .dropdown {
+}
+
+.nav-item:hover .dropdown {
     display: block;
-  }
-  
-  .dropdown li a {
+}
+
+.dropdown li a {
     display: block;
-    padding: 0.75rem 1rem; /* Match dropdown item size */
+    padding: 0.75rem 1rem;
     color: #fff;
     text-decoration: none;
-  }
-  
-  .dropdown li a:hover {
+}
+
+.dropdown li a:hover {
     background-color: #ffd700;
     color: #4d1979;
-  }
-/* Centering Content with Margins */
-.content-section, .container {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 1rem;
-    box-sizing: border-box;
+}
+
+/* Page Content Section */
+.content-section {
+    padding: 3rem 2rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    text-align: center;
 }
 
 .msg-page {
