@@ -27,7 +27,7 @@ body {
 }
 
 .nav-item {
-    position: relative;
+    position: relative; /* Required for dropdown positioning */
 }
 
 .nav-item > a {
@@ -41,21 +41,24 @@ body {
     color: #ffd700;
 }
 
+/* Dropdown Menu Styling */
 .dropdown {
-    display: none;
+    display: none; /* Dropdown is hidden by default */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Position below the nav-item */
     left: 0;
     background-color: #4d1979;
     list-style: none;
     padding: 0;
+    margin: 0;
     min-width: 180px;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Ensure dropdown appears above other elements */
 }
 
 .nav-item:hover .dropdown {
-    display: block;
+    display: block; /* Dropdown shows only on hover */
 }
 
 .dropdown li a {
@@ -63,6 +66,7 @@ body {
     padding: 0.75rem 1rem;
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 .dropdown li a:hover {

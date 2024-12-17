@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Handle dropdown menus
+ddocument.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-item').forEach(item => {
         const dropdown = item.querySelector('.dropdown');
 
         if (dropdown) {
-            // Add hover events to show/hide dropdown
+            // Remove all default `display` logic
             item.addEventListener('mouseenter', () => {
                 dropdown.style.display = 'block';
             });
@@ -14,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+});
 
     // Render threads on page load
     renderThreads();
