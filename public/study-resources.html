@@ -60,22 +60,91 @@
       <h2 class="toggle-title">Algorithms</h2>
       <ul class="toggle-content">
         <li><a href="https://www.geeksforgeeks.org/sorting-algorithms/">Simple Algorithms</a>: Basic sorting and searching algorithms like bubble sort and binary search.</li>
-        <!-- Button to Launch Sorting Visualization -->
-        <div>
-          <button id="bubbleSortBtn" onclick="startBubbleSort()">Try Bubble Sort</button>
-        </div>
-
-        <!-- Canvas for Visualization -->
-        <div id="bubbleSortContainer" style="display:none;">
-          <p>Enter numbers (comma-separated):</p>
-          <input type="text" id="numbersInput" placeholder="e.g., 5,3,8,1,2">
-          <button onclick="runBubbleSort()">Sort Now</button>
+          <!-- Bubble Sort Section -->
           <div>
-              <canvas id="bubbleSortCanvas" width="500" height="200"></canvas>
+            <button id="bubbleSortBtn" onclick="toggleSection('bubbleSortContainer')">Try Bubble Sort</button>
+          </div>
+          <div id="bubbleSortContainer" style="display:none;">
+            <p>Enter numbers (comma-separated):</p>
+            <input type="text" id="numbersInput" placeholder="e.g., 5,3,8,1,2">
+            <button onclick="runBubbleSort()">Sort Now</button>
+            <button onclick="clearBubbleSort()">Clear</button>
+            <div>
+                <canvas id="bubbleSortCanvas" width="500" height="200"></canvas>
+            </div>
+          </div>
+
+          <!-- Binary Search Section -->
+          <div>
+            <button id="binarySearchBtn" onclick="toggleSection('binarySearchContainer')">Try Binary Search</button>
+          </div>
+          <div id="binarySearchContainer" style="display:none;">
+            <p>Enter a sorted list of numbers (comma-separated):</p>
+            <input type="text" id="binaryNumbersInput" placeholder="e.g., 1,2,3,4,5,6,7">
+            <p>Enter the target number to search for:</p>
+            <input type="number" id="binaryTargetInput" placeholder="e.g., 5">
+            <button onclick="runBinarySearch()">Search Now</button>
+            <button onclick="clearBinarySearch()">Clear</button>
+            <div>
+                <canvas id="binarySearchCanvas" width="500" height="200"></canvas>
+            </div>
+          </div>
+        <li><a href="https://www.geeksforgeeks.org/greedy-approach-vs-dynamic-programming/">Intermediate Algorithms</a>: Dynamic programming and greedy algorithms.</li>
+        <!-- Fibonacci Sequence Section -->
+        <div>
+            <button id="fibonacciBtn" onclick="toggleSection('fibonacciContainer')">Try Fibonacci (Dynamic Programming)</button>
+            
+        </div>
+        <div id="fibonacciContainer" style="display:none;">
+            <p>Enter a number (N) to calculate Fibonacci:</p>
+            <input type="number" id="fibonacciInput" placeholder="e.g., 6" min="1">
+            <button onclick="runFibonacci()">Calculate</button>
+            <button onclick="clearFibonacci()">Clear</button>
+            <div>
+                <canvas id="fibonacciCanvas" width="600" height="300"></canvas>
+            </div>
+        </div>
+        
+        <!-- LCS Section -->
+        <div>
+          <div>
+            <button id="lcsBtn" onclick="toggleSection('lcsContainer')">Try Longest Common Subsequence</button>
+        </div>
+        <div id="lcsContainer" style="display:none;">
+            <p>Enter two strings to find the LCS:</p>
+            <input type="text" id="string1" placeholder="First String (e.g., ABCBDAB)">
+            <input type="text" id="string2" placeholder="Second String (e.g., BDCAB)">
+            <button onclick="runLCS()">Calculate LCS</button>
+            <button onclick="clearLCS()">Clear</button>
+            <div>
+                <canvas id="lcsCanvas" width="800" height="400"></canvas>
+            </div>
+        </div>        
+        <li><a href="https://www.geeksforgeeks.org/divide-and-conquer/">Advanced Algorithms</a>: Graph traversal algorithms, and divide & conquer strategies.</li>
+        <!-- Dijkstra's Algorithm Section -->
+        <div>
+          <button id="dijkstraBtn" onclick="initializeDijkstra()">Try Dijkstra's Algorithm</button>
+        </div>
+        <div id="dijkstraContainer" style="display:none;">
+          <p>Click on the canvas to add nodes. Drag between nodes to create weighted edges.</p>
+          <button onclick="runDijkstra()">Run Dijkstra's Algorithm</button>
+          <button onclick="clearDijkstraCanvas()">Clear Canvas</button> <!-- New Clear Button -->
+          <div>
+              <canvas id="dijkstraCanvas" width="800" height="500"></canvas>
           </div>
         </div>
-        <li><a href="https://www.geeksforgeeks.org/greedy-approach-vs-dynamic-programming/">Intermediate Algorithms</a>: Dynamic programming and greedy algorithms.</li>
-        <li><a href="https://www.geeksforgeeks.org/divide-and-conquer/">Advanced Algorithms</a>: Graph traversal algorithms, and divide & conquer strategies.</li>
+        <!-- Depth-First Search Section -->
+        <div>
+          <button id="dfsBtn" onclick="toggleSection('dfsContainer')">Try Depth-First Search (DFS)</button>
+        </div>
+        <div id="dfsContainer" style="display:none;">
+          <p>Click on the canvas to add nodes. Drag between nodes to create edges.</p>
+          <button onclick="runDFS()">Run DFS</button>
+          <button onclick="clearDFSCanvas()">Clear</button>
+          <div>
+              <canvas id="dfsCanvas" width="800" height="500"></canvas>
+          </div>
+        </div>
       </ul>
     </div>
 
@@ -105,6 +174,6 @@
     <p>Created by Hunter CS Students | &copy; 2024 Hunter College</p>
   </footer>
 
-  <script src="studyresourcesscript.js"></script>
+  <script src="js/studyresourcesscript.js" defer></script>
 </body>
 </html>
