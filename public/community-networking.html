@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community and Networking</title>
 
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
-
   <link rel="stylesheet" href="community-networking.css">
-  <script src="community-networking.js" defer></script>
 </head>
 <body>
   <nav class="main-nav">
@@ -53,23 +49,9 @@
 
         <!-- Thread Creation -->
         <div id="thread-creation">
-          <input
-            type="text"
-            id="username"
-            placeholder="Your Username"
-            class="form-control"
-          />
-          <input
-            type="text"
-            id="threadTitle"
-            placeholder="Thread Title"
-            class="form-control"
-          />
-          <textarea
-            id="threadContent"
-            placeholder="Thread Content"
-            class="form-control"
-          ></textarea>
+          <input type="text" id="username" placeholder="Your Username" class="form-control" />
+          <input type="text" id="threadTitle" placeholder="Thread Title" class="form-control" />
+          <textarea id="threadContent" placeholder="Thread Content" class="form-control"></textarea>
           <button id="createThreadButton">Create Thread</button>
         </div>
 
@@ -86,17 +68,8 @@
           <div id="replySection">
             <h4>Replies</h4>
             <ul id="replyList"></ul>
-            <input
-              type="text"
-              id="replyUsername"
-              placeholder="Your Username"
-              class="form-control"
-            />
-            <textarea
-              id="replyContent"
-              placeholder="Write your reply..."
-              class="form-control"
-            ></textarea>
+            <input type="text" id="replyUsername" placeholder="Your Username" class="form-control" />
+            <textarea id="replyContent" placeholder="Write your reply..." class="form-control"></textarea>
             <button id="replyButton">Post Reply</button>
           </div>
         </div>
@@ -119,6 +92,41 @@
       </div>
     </section>
   </main>
+
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCMEDyNBPU_65YKz6H6LG9kbF03H-hZsbs",
+      authDomain: "web-dev-final-81bfa.firebaseapp.com",
+      databaseURL: "https://web-dev-final-81bfa-default-rtdb.firebaseio.com/",
+      projectId: "web-dev-final-81bfa",
+      storageBucket: "web-dev-final-81bfa.appspot.com",
+      messagingSenderId: "727644770926",
+      appId: "1:727644770926:web:b66ff2ca310fc86d690c7f",
+      measurementId: "G-2CZEJNEMNY"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase(app);
+
+    // Expose `db` globally for `community-networking.js`
+    window.firebaseDb = db;
+  </script>
+
+  <!-- Main JavaScript -->
+  <script type="module" src="community-networking.js"></script>
+</body>
+</html>
+
 
   <footer>
     <p>&copy; 2024 Hunter College CS Handbook. All rights reserved.</p>
