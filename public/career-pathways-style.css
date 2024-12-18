@@ -191,5 +191,14 @@
     height: 100%;
     border: none;
   }
+
+  /* Footer */
+.footer {
+  padding: 1.5rem;
+  background-color: #4d1979;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
   
   

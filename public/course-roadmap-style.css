@@ -311,6 +311,19 @@ body {
   color: #1b5e20;
 }
 
+.note-message {
+  color: #d9534f; 
+  background-color: #fbecec; 
+  border: 1px solid #d9534f; 
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
 /* Footer */
 .footer {
   padding: 1.5rem;
