@@ -1,7 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch'; // Ensure node-fetch v3+ is used with "type": "module"
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Serve static files (HTML, CSS, JS)
 app.use(express.static('public'));
@@ -11,11 +11,7 @@ app.get('/api/quotes', async (req, res) => {
   try {
     const response = await fetch('https://programming-quotesapi.vercel.app/api/random');
     const data = await response.json();
-
-    // Log the response to confirm
-    console.log('API Response:', data);
-
-    res.json(data); // Send the data to the client
+    res.json(data);
   } catch (error) {
     console.error('Error fetching quote:', error.message);
     res.status(500).json({ message: 'Error fetching quote', error: error.message });
@@ -26,4 +22,5 @@ app.get('/api/quotes', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+console.log('Server.js is running...');
 
