@@ -216,7 +216,7 @@
           </div>
         <!-- Tree Visualization Section -->
             <div>
-              <button id="treeBtn">Try Tree Visualization</button>
+              <button id="treeBtn">Try Trees</button>
             </div>
             <div id="treeContainer" style="display:none;">
                 <div id="treeControls">
@@ -233,7 +233,7 @@
         <li><a href="https://www.geeksforgeeks.org/graph-representations-using-set-hash/">Advanced Data Structures</a>: Graphs, Hash Tables, and Heaps.</li>
         <!-- Graph Visualization Section -->
             <div>
-              <button id="graphBtn">Try Graph Visualization</button>
+              <button id="graphBtn">Try Graphs</button>
             </div>
             <div id="graphContainer" style="display:none;">
               <div id="graphControls">
@@ -246,7 +246,7 @@
             </div>
             <!-- Hash Table Visualization Section -->
             <div>
-              <button id="hashTableBtn">Try Hash Table Visualization</button>
+              <button id="hashTableBtn">Try Hash Tables</button>
             </div>
             <div id="hashTableContainer" style="display:none;">
               <div id="hashTableControls">
@@ -259,6 +259,19 @@
               </div>
               <canvas id="hashTableCanvas" width="500" height="560" style="border:1px solid black;"></canvas>
             </div>
+            <!-- Heaps Visualization Section-->
+            <div>
+              <button id="heapBtn">Try Heaps</button>
+          </div>
+          <div id="heapContainer" style="display:none;">
+              <div id="heapControls">
+                  <button onclick="insertHeap()">Insert</button>
+                  <button onclick="deleteHeap()">Delete</button>
+                  <button onclick="toggleHeapType()">Toggle Min/Max</button>
+                  <button onclick="clearHeap()">Clear</button>
+              </div>
+              <canvas id="heapCanvas" width="600" height="400" style="border:1px solid black;"></canvas>
+          </div>          
       </ul>
     </div>
 

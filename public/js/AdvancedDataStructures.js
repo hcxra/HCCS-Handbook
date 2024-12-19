@@ -335,8 +335,177 @@ function drawHashTable(highlightIndex = -1) {
 
 // Clear Hash Table
 function clearHashTable() {
-    hashTable = Array.from({ length: numberOfBuckets }, () => null); // Reset the hash table
+    hashTable = null; // Reset the hash table
     drawHashTable();
 }
 
+
+// ----------------------------------
+// Heaps Visualization Logic
+// ----------------------------------
+let heapCanvas, heapCtx;
+let heap = []; // Array to represent the heap
+let isMinHeap = true; // Default to Min-Heap
+
+// Initialize Heap Visualization
+function initializeHeap() {
+    heapCanvas = document.getElementById("heapCanvas");
+    heapCtx = heapCanvas.getContext("2d");
+    clearHeap();
+}
+
+// Insert Element into Heap
+function insertHeap() {
+    const value = parseInt(prompt("Enter a value to insert:"), 10);
+
+    if (!isNaN(value)) {
+        heap.push(value); // Add to the end
+        heapifyUp(heap.length - 1); // Fix the heap
+        drawHeap(); // Update visualization
+    } else {
+        alert("Invalid value!");
+    }
+}
+
+// Delete Root from Heap
+function deleteHeap() {
+    if (heap.length === 0) {
+        alert("Heap is empty!");
+        return;
+    }
+
+    const confirmed = confirm("Are you sure you want to delete the root?");
+    if (!confirmed) return;
+
+    heap[0] = heap.pop(); // Replace root with the last element
+    heapifyDown(0); // Fix the heap
+    drawHeap(); // Update visualization
+}
+
+// Clear Heap
+function clearHeap() {
+    heap = [];
+    drawHeap();
+}
+
+// Toggle Heap Type
+function toggleHeapType() {
+    isMinHeap = !isMinHeap;
+    alert(`Heap type switched to ${isMinHeap ? "Min-Heap" : "Max-Heap"}`);
+    rebuildHeap();
+}
+
+// Rebuild Heap
+function rebuildHeap() {
+    for (let i = Math.floor(heap.length / 2) - 1; i >= 0; i--) {
+        heapifyDown(i);
+    }
+    drawHeap();
+}
+
+// Heapify Up (for insertion)
+function heapifyUp(index) {
+    let parentIndex = Math.floor((index - 1) / 2);
+
+    while (
+        index > 0 &&
+        (isMinHeap
+            ? heap[index] < heap[parentIndex]
+            : heap[index] > heap[parentIndex])
+    ) {
+        // Swap with parent
+        [heap[index], heap[parentIndex]] = [heap[parentIndex], heap[index]];
+        index = parentIndex;
+        parentIndex = Math.floor((index - 1) / 2);
+    }
+}
+
+// Heapify Down (for deletion)
+function heapifyDown(index) {
+    let leftChild = 2 * index + 1;
+    let rightChild = 2 * index + 2;
+    let targetIndex = index;
+
+    if (
+        leftChild < heap.length &&
+        (isMinHeap ? heap[leftChild] < heap[targetIndex] : heap[leftChild] > heap[targetIndex])
+    ) {
+        targetIndex = leftChild;
+    }
+
+    if (
+        rightChild < heap.length &&
+        (isMinHeap ? heap[rightChild] < heap[targetIndex] : heap[rightChild] > heap[targetIndex])
+    ) {
+        targetIndex = rightChild;
+    }
+
+    if (targetIndex !== index) {
+        // Swap with the target child
+        [heap[index], heap[targetIndex]] = [heap[targetIndex], heap[index]];
+        heapifyDown(targetIndex);
+    }
+}
+
+// Draw Heap Visualization
+function drawHeap() {
+    heapCtx.clearRect(0, 0, heapCanvas.width, heapCanvas.height);
+
+    if (heap.length === 0) {
+        heapCtx.fillStyle = "black";
+        heapCtx.font = "20px Arial";
+        heapCtx.fillText("Heap is empty!", heapCanvas.width / 2 - 50, heapCanvas.height / 2);
+        return;
+    }
+
+    const nodeRadius = 20; // Radius of each node
+    const levelHeight = 80; // Vertical spacing between levels
+    const canvasCenterX = heapCanvas.width / 2; // Center of the canvas
+
+    function drawNode(value, x, y) {
+        heapCtx.beginPath();
+        heapCtx.arc(x, y, nodeRadius, 0, 2 * Math.PI);
+        heapCtx.fillStyle = "purple";
+        heapCtx.fill();
+        heapCtx.stroke();
+        heapCtx.fillStyle = "white";
+        heapCtx.font = "14px Arial";
+        heapCtx.fillText(value, x - 7, y + 5);
+    }
+
+    function drawLine(x1, y1, x2, y2) {
+        heapCtx.beginPath();
+        heapCtx.moveTo(x1, y1);
+        heapCtx.lineTo(x2, y2);
+        heapCtx.strokeStyle = "black";
+        heapCtx.stroke();
+    }
+
+    // Recursively position and draw the heap
+    function drawHeapNode(index, x, y, xOffset) {
+        if (index >= heap.length) return;
+
+        drawNode(heap[index], x, y);
+
+        const leftChild = 2 * index + 1;
+        const rightChild = 2 * index + 2;
+
+        if (leftChild < heap.length) {
+            const leftX = x - xOffset;
+            const leftY = y + levelHeight;
+            drawLine(x, y + nodeRadius, leftX, leftY - nodeRadius);
+            drawHeapNode(leftChild, leftX, leftY, xOffset / 2);
+        }
+
+        if (rightChild < heap.length) {
+            const rightX = x + xOffset;
+            const rightY = y + levelHeight;
+            drawLine(x, y + nodeRadius, rightX, rightY - nodeRadius);
+            drawHeapNode(rightChild, rightX, rightY, xOffset / 2);
+        }
+    }
+
+    const initialXOffset = canvasCenterX / 2; // Initial horizontal spacing
+    drawHeapNode(0, canvasCenterX, 50, initialXOffset);
+}
 

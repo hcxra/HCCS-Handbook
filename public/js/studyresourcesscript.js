@@ -84,6 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     case 'dijkstraContainer':
                         clearDijkstraCanvas();
                         break;
+                    case 'hashTableContainer':
+                        clearHashTable();
+                        break;
 
                 }
             }
@@ -186,4 +189,11 @@ document.addEventListener("DOMContentLoaded", function () {
             initializeHashTable();
         });
     });    
+
+    document.getElementById('heapBtn')?.addEventListener('click', () => {
+        loadScript('js/AdvancedDataStructures.js', () => {
+            toggleSection('heapContainer');
+            initializeHeap();
+        });
+    });
 });
