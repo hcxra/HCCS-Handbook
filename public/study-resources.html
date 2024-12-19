@@ -153,8 +153,112 @@
       <h2 class="toggle-title">Data Structures</h2>
       <ul class="toggle-content">
         <li><a href="https://www.geeksforgeeks.org/linked-list-vs-array/">Simple Data Structures</a>: Arrays and Linked Lists.</li>
+            <!-- Arrays Section -->
+            <div>
+              <button id="arrayBtn">Try Arrays</button>
+          </div>
+          <div id="arrayContainer" style="display:none;">
+              <p>Enter array elements (comma-separated):</p>
+              <input type="text" id="arrayInput" placeholder="e.g., 1,2,3,4,5">
+              <button onclick="insertArray()">Insert</button>
+              <button onclick="deleteFirstArray()">Delete First</button>
+              <button onclick="deleteLastArray()">Delete Last</button>
+              <button onclick="accessArray()">Access</button>
+              <button onclick="traverseArray()">Traverse</button>
+              <button onclick="clearArray()">Clear</button>
+              <div>
+                  <canvas id="arrayCanvas" width="600" height="200"></canvas>
+              </div>
+          </div>
+            <!-- Linked Lists Section -->
+            <div>
+              <button id="linkedListBtn">Try Linked Lists</button>
+          </div>
+          <div id="linkedListContainer" style="display:none;">
+
+              <button onclick="insertAtBeginning()">Insert at Beginning</button>
+              <button onclick="insertAtEnd()">Insert at End</button>
+              <button onclick="deleteFromBeginning()">Delete from Beginning</button>
+              <button onclick="deleteFromEnd()">Delete from End</button>
+              <button onclick="traverseLinkedList()">Traverse</button>
+              <button onclick="searchLinkedList()">Search</button>
+              <button onclick="clearLinkedList()">Clear</button>
+              <div>
+                  <canvas id="linkedListCanvas" width="600" height="300"></canvas>
+              </div>
+          </div>
         <li><a href="https://www.geeksforgeeks.org/difference-between-stack-and-queue-data-structures/">Intermediate Data Structures</a>: Stacks, Queues, and Trees.</li>
+        <!-- Stack Visualization Section -->
+            <div>
+              <button id="stackVisualizationBtn">Try Stacks</button>
+            </div>
+            <div id="stackContainer" style="display:none;">
+              <button id="stackPushBtn" onclick="pushStack()">Push</button>
+              <button id="stackPopBtn" onclick="popStack()">Pop</button>
+              <button id="stackPeekBtn" onclick="peekStack()">Peek</button>
+              <button id="stackClearBtn" onclick="clearStack()">Clear</button>
+            <div>
+              <canvas id="stackCanvas" width="200" height="400" style="border:1px solid black;"></canvas>
+            </div>
+          </div>
+        <!-- Queue Visualization Section -->
+            <div>
+              <button id="queueVisualizationBtn">Try Queues</button>
+            </div>
+            <div id="queueContainer" style="display: none;">
+              <button id="queueEnqueueBtn" onclick="enqueueQueue()">Enqueue</button>
+              <button id="queueDequeueBtn" onclick="dequeueQueue()">Dequeue</button>
+              <button id="queuePeekBtn" onclick="peekQueue()">Peek</button>
+              <button id="queueClearBtn" onclick="clearQueue()">Clear</button>
+            <div>
+              <canvas id="queueCanvas" width="600" height="200" style="border:1px solid black;"></canvas>
+            </div>
+          </div>
+        <!-- Tree Visualization Section -->
+            <div>
+              <button id="treeBtn">Try Tree Visualization</button>
+            </div>
+            <div id="treeContainer" style="display:none;">
+                <div id="treeControls">
+                    <button onclick="insertNode()">Insert</button>
+                    <button onclick="deleteNode()">Delete</button>
+                    <button onclick="searchNode()">Search</button>
+                    <button onclick="traverseTree('inorder')">Inorder</button>
+                    <button onclick="traverseTree('preorder')">Preorder</button>
+                    <button onclick="traverseTree('postorder')">Postorder</button>
+                    <button onclick="clearTree()">Clear</button>
+                </div>
+                <canvas id="treeCanvas" width="800" height="400" style="border:1px solid black;"></canvas>
+            </div>
         <li><a href="https://www.geeksforgeeks.org/graph-representations-using-set-hash/">Advanced Data Structures</a>: Graphs, Hash Tables, and Heaps.</li>
+        <!-- Graph Visualization Section -->
+            <div>
+              <button id="graphBtn">Try Graph Visualization</button>
+            </div>
+            <div id="graphContainer" style="display:none;">
+              <div id="graphControls">
+                  <button onclick="addGraphNodeManually()">Add Node</button>
+                  <button onclick="runBFS()">BFS Traversal</button>
+                  <button onclick="runDFS()">DFS Traversal</button>
+                  <button onclick="clearGraph()">Clear</button>
+              </div>
+              <canvas id="graphCanvas" width="800" height="400" style="border:1px solid black;"></canvas>
+            </div>
+            <!-- Hash Table Visualization Section -->
+            <div>
+              <button id="hashTableBtn">Try Hash Table Visualization</button>
+            </div>
+            <div id="hashTableContainer" style="display:none;">
+              <div id="hashTableControls">
+                  <input type="number" id="bucketInput" placeholder="Enter number of buckets" min="1">
+                  <button onclick="setBucketSize()">Set Buckets</button>
+                  <button onclick="insertHashTable()">Insert</button>
+                  <button onclick="deleteHashTable()">Delete</button>
+                  <button onclick="searchHashTable()">Search</button>
+                  <button onclick="clearHashTable()">Clear</button>
+              </div>
+              <canvas id="hashTableCanvas" width="500" height="560" style="border:1px solid black;"></canvas>
+            </div>
       </ul>
     </div>
 
