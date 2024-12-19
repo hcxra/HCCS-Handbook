@@ -137,5 +137,53 @@ document.addEventListener("DOMContentLoaded", function () {
             initializeDFS();
         });
     });
+    // Simple Data Structures: Arrays and Linked Lists
+    document.getElementById('arrayBtn')?.addEventListener('click', () => {
+        loadScript('js/SimpleDataStructures.js', () => {
+            toggleSection('arrayContainer');
+            initializeArrays();
+        });
+    });
 
+    document.getElementById('linkedListBtn')?.addEventListener('click', () => {
+        loadScript('js/SimpleDataStructures.js', () => {
+            toggleSection('linkedListContainer');
+             initializeLinkedList();
+        });
+    });
+    // Intermidiate Data Structures: Stacks, Queues, Trees
+    document.getElementById('stackVisualizationBtn')?.addEventListener('click', () => {
+        loadScript('js/IntermediateDataStructures.js', () => {
+            toggleSection('stackContainer');
+            initializeStack();
+        });
+    });
+
+    document.getElementById('queueVisualizationBtn')?.addEventListener('click', () => {
+        loadScript('js/IntermediateDataStructures.js', () => {
+            toggleSection('queueContainer'); 
+            initializeQueue();
+        });
+    });
+
+    document.getElementById('treeBtn')?.addEventListener('click', () => {
+        loadScript('js/IntermediateDataStructures.js', () => {
+            toggleSection('treeContainer');
+            initializeTree(); 
+        });
+    });
+    //Advanced Data Structures: Graphs, Hash Maps, Heaps
+    document.getElementById('graphBtn')?.addEventListener('click', () => {
+        loadScript('js/AdvancedDataStructures.js', () => {
+            toggleSection('graphContainer'); 
+            initializeGraph();
+        });
+    });
+    
+    document.getElementById('hashTableBtn')?.addEventListener('click', () => {
+        loadScript('js/AdvancedDataStructures.js', () => {
+            toggleSection('hashTableContainer');
+            initializeHashTable();
+        });
+    });    
 });
