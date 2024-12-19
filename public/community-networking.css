@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 1rem 0;
-    z-index: 10;
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 .main-nav ul {
@@ -27,7 +27,7 @@ body {
 }
 
 .nav-item {
-    position: relative; /* Required for dropdown positioning */
+    position: relative;
 }
 
 .nav-item > a {
@@ -35,30 +35,34 @@ body {
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    display: block;
 }
 
 .nav-item > a:hover {
     color: #ffd700;
 }
 
-/* Dropdown Menu Styling */
+/* Dropdown Styling */
 .dropdown {
-    display: none; /* Dropdown is hidden by default */
+    display: none;
     position: absolute;
-    top: 100%; /* Position below the nav-item */
+    top: 100%;
     left: 0;
     background-color: #4d1979;
     list-style: none;
     padding: 0;
-    margin: 0;
     min-width: 180px;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100; /* Ensure dropdown appears above other elements */
+    z-index: 1500; /* Ensure dropdowns are above other elements */
+}
+.dropdown {
+    display: none !important;
 }
 
-.nav-item:hover .dropdown {
-    display: block; /* Dropdown shows only on hover */
+/* Show dropdown on hover */
+.nav-item:hover > .dropdown {
+    display: block !important;
 }
 
 .dropdown li a {
@@ -66,12 +70,18 @@ body {
     padding: 0.75rem 1rem;
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .dropdown li a:hover {
     background-color: #ffd700;
     color: #4d1979;
+}
+
+/* Fix overlapping dropdowns */
+.dropdown ul {
+    margin: 0;
+    padding: 0;
 }
 
 /* Centering Content with Margins */
@@ -202,3 +212,5 @@ footer {
     margin-top: 2rem;
     font-size: 0.9rem;
 }
+
+
