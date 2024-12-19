@@ -91,7 +91,7 @@
           <li>Network with other attendees and exchange ideas.</li>
         </ol>
         <ul>
-          <li>Hunter College has their own STEM conference every year. For 2025, the conference is on April 30th, while the abstract submission is February 10th and poster submission is March 30th.</li>
+          <li>Hunter College has their own STEM conference every year. For 2025, the conference is on April 30th, with abstract submissions due February 10th and poster submissions due March 30th.</li>
       </div>
 
       <div class="container">
@@ -107,33 +107,15 @@
       <div class="container">
         <h2>Explore Upcoming CS Conferences</h2>
         <p>Check out the latest CS conferences happening globally:</p>
-        <div id="conference-list">
-          <p>Loading conferences...</p>
-        </div>
+        <iframe src="https://confs.tech/" width = "100%" height="500" style="border: none;"></iframe>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 Hunter College CS Handbook. All rights reserved.</p>
+    <p>&copy; 2024 Research & Conferences Guide | All Rights Reserved</p>
   </footer>
 
-  <script>
-    async function fetchConferences() {
-      const conferenceList = document.getElementById('conference-list');
-      try {
-          const response = await fetch('https://confs.tech/api');
-          const conferences = await response.json();
-          conferenceList.innerHTML = '<ul>' +
-              conferences.map(conference => `<li>${conference.name} - ${conference.date}</li>`).join('') +
-              '</ul>';
-      } catch (error) {
-          console.error("Error fetching conferences:", error);
-          conferenceList.innerHTML = '<p>Error loading conferences. Please try again later.</p>';
-      }
-  }
-  document.addEventListener('DOMContentLoaded', fetchConferences);
-  </script>
 </body>
 </html>
 
